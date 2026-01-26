@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="nBogne - Stateless health data exchange infrastructure connecting healthcare systems across Africa. Data in motion, never at rest.">
+  <meta name="keywords" content="health data exchange, healthcare interoperability, Africa healthcare, EMR integration, FHIR, HL7">
+  <meta name="author" content="nBogne">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="nBogne - Healthcare Data Exchange Infrastructure">
+  <meta property="og:description" content="Stateless health data exchange connecting healthcare systems across Africa.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nbogne.com">
+  
+  <title>nBogne - Healthcare Data Exchange Infrastructure</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%230891b2;stop-opacity:1' /><stop offset='100%' style='stop-color:%2306b6d4;stop-opacity:1' /></linearGradient></defs><rect fill='url(%23grad)' rx='20' width='100' height='100'/><circle cx='50' cy='40' r='8' fill='white'/><path d='M50 50 Q40 65 35 75' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/><path d='M50 50 Q60 65 65 75' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/></svg>">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="Images/Logo.png" alt="nBogne" class="logo-img">
+          <span>nBogne</span>
+        </a>
+        
+        <nav class="nav-desktop">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="solution.html" class="nav-link">Solution</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+        </nav>
+        
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="solution.html" class="nav-link">Solution</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-flow">
+      <div class="flow-line"></div>
+      <div class="flow-line"></div>
+      <div class="flow-line"></div>
+      <div class="flow-line"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>Now Building in Ghana</span>
+        </div>
+        
+        <h1>Medical Records That <span class="hero-highlight">Follow You</span></h1>
+        
+        <p class="hero-subtitle">
+          When you see a new doctor, your medical history should be there waiting. nBogne makes that possible, records travel between clinics instantly, without sitting in anyone's database.
+        </p>
+        
+        <div class="hero-cta">
+          <a href="solution.html" class="btn btn-primary btn-large">See How It Works</a>
+          <a href="contact.html" class="btn btn-outline btn-large">Contact Us</a>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">&lt;10s</div>
+            <div class="hero-stat-label">Record Transfer Time</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">0</div>
+            <div class="hero-stat-label">Clinical Data Stored</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">100%</div>
+            <div class="hero-stat-label">Audit Compliant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Problem Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">The Problem</span>
+        <h2>Medical Records Don't Follow Patients</h2>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🏥</div>
+          <h4>The Scale of the Problem</h4>
+          <p style="margin-bottom: var(--space-4);"><strong>In Ghana alone:</strong></p>
+          <ul style="display: flex; flex-direction: column; gap: var(--space-3);">
+            <li>🏠 <span class="number-highlight">370+</span> hospitals</li>
+            <li>🏘️ <span class="number-highlight">4,300+</span> clinics</li>
+            <li>❌ None talk to each other</li>
+          </ul>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h4>You Pay Twice</h4>
+          <p style="margin-bottom: var(--space-3);">Get lab work at one facility. Referred elsewhere.</p>
+          <p style="margin-bottom: var(--space-3);">The new doctor can't see your results.</p>
+          <p style="margin-bottom: var(--space-3);"><strong>You pay again.</strong></p>
+          <p style="font-size: 0.9rem; color: var(--color-accent-500); font-weight: 600;">Same test. Same money. Weeks lost.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⏰</div>
+          <h4>Staff Time Wasted</h4>
+          <p style="margin-bottom: var(--space-3);">Healthcare workers spend <span class="number-highlight">20-30%</span> of their time on data logistics.</p>
+          <p style="margin-bottom: var(--space-3);">Not treating patients. Not diagnosing.</p>
+          <p style="margin-bottom: var(--space-3);"><strong>Just chasing records.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why It Matters Section -->
+  <section class="section" style="background: rgba(8, 145, 178, 0.03);">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-text">
+          <span class="section-label">The Trust Problem</span>
+          <h3>Ghana Cancelled LIMS in 2024</h3>
+          <p><strong>Why?</strong> Because hospitals didn't trust a central database with patient data.</p>
+          <p style="margin-top: var(--space-4);">And they were right.</p>
+          <p style="margin-top: var(--space-4); font-size: 0.95rem; color: var(--color-gray-600);">The interoperability market has been asking hospitals to surrender data custody. nBogne does the opposite.</p>
+        </div>
+        <div class="content-image">🔒</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Solution Overview -->
+  <section class="section how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Approach</span>
+        <h2>What If the System Never Stored Your Data?</h2>
+        <p>Most solutions ask hospitals to trust them with patient data. We did the opposite: we built a system that's literally incapable of storing it.</p>
+      </div>
+      
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="process-step-number">1</div>
+          <h4>Arrive</h4>
+          <p>Your clinic sends your records</p>
+        </div>
+        
+        <div class="process-arrow">→</div>
+        
+        <div class="process-step">
+          <div class="process-step-number">2</div>
+          <h4>Adapt</h4>
+          <p>Convert to whatever format the other clinic uses</p>
+        </div>
+        
+        <div class="process-arrow">→</div>
+        
+        <div class="process-step">
+          <div class="process-step-number">3</div>
+          <h4>Deliver</h4>
+          <p>Send compressed to save bandwidth</p>
+        </div>
+        
+        <div class="process-arrow">→</div>
+        
+        <div class="process-step">
+          <div class="process-step-number">4</div>
+          <h4>Forget</h4>
+          <p>Data vanishes in <span class="stat-badge">&lt;60 seconds</span></p>
+        </div>
+      </div>
+      
+      <div class="architecture-diagram">
+        <div class="diagram-flow">
+          <div class="diagram-node">
+            <div class="diagram-node-box diagram-node-emr">Your Clinic</div>
+            <span class="diagram-label">Your Medical Data</span>
+          </div>
+          
+          <div class="diagram-arrow">
+            <div class="diagram-arrow-line"></div>
+            <span>→</span>
+          </div>
+          
+          <div class="diagram-node">
+            <div class="diagram-node-box diagram-node-nbogne">nBogne</div>
+          </div>
+          
+          <div class="diagram-arrow">
+            <span>→</span>
+            <div class="diagram-arrow-line"></div>
+          </div>
+          
+          <div class="diagram-node">
+            <div class="diagram-node-box diagram-node-emr">EMR B</div>
+            <span class="diagram-label">Destination System</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats Section -->
+  <section class="section stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">60-80%</div>
+          <div class="stat-label">Data Compression</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">&lt;60s</div>
+          <div class="stat-label">Maximum RAM Time</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">5+</div>
+          <div class="stat-label">Data Formats Supported</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">ATNA Compliant Audit</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Trust Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Built on Trust</span>
+        <h2>Architecture Makes Betrayal Impossible</h2>
+        <p>You don't have to believe we won't misuse your data. Our architecture makes it impossible, there's nothing to misuse.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h4>Zero Storage</h4>
+          <p>Clinical data exists only in RAM during transit. No database to breach, no backups to leak, no data to sell.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h4>Metadata-Only Audit</h4>
+          <p>We log transaction metadata, timestamps, source, destination, size, status, but never clinical content. Full compliance without exposure.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h4>Cryptographic Verification</h4>
+          <p>Every transaction includes a cryptographic hash proving content wasn't altered, without revealing what the content was.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Quote Section -->
+  <section class="section quote-section">
+    <div class="container">
+      <div class="quote-card">
+        <div class="quote-icon">"</div>
+        <p class="quote-text">
+          No technology can fix a trust problem. But architecture can. When you can't store data, you can't betray it.
+        </p>
+        <p class="quote-author">,  <strong>The nBogne Principle</strong></p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Impact Section -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" style="color: var(--color-accent-400);">The Impact</span>
+        <h2>What Changes When Records Flow</h2>
+        <p>Connected healthcare isn't just more efficient, it's more human.</p>
+      </div>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <h4>For Patients</h4>
+          <p>Records follow you. No more paying twice for the same test. No more explaining your history at every visit.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>For Healthcare Workers</h4>
+          <p>Information arrives before you ask. More time treating patients, less time chasing paperwork.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>For Facilities</h4>
+          <p>Reduce duplicate testing by 50%. Improve claim approval rates. Better care at lower cost.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>For Health Systems</h4>
+          <p>Real-time surveillance. Cross-facility visibility. Data-driven resource allocation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Connect Your Systems?</h2>
+        <p>Whether you're an EMR developer, hospital network, or ministry of health, we'd love to talk about how nBogne can help.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary btn-large">Start a Conversation</a>
+          <a href="solution.html" class="btn btn-outline btn-large">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="Images/Logo.png" alt="nBogne" class="logo-img">
+            <span>nBogne</span>
+          </a>
+          <p>Stateless health data exchange infrastructure. Connecting healthcare systems across Africa so records follow patients.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-title">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="solution.html">Solution</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-title">Solution</h4>
+          <div class="footer-links">
+            <a href="solution.html#how-it-works">How It Works</a>
+            <a href="solution.html#features">Features</a>
+            <a href="solution.html#security">Security</a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a>
+            <a href="tel:+233549253610">+233 549 253 610</a>
+            <a href="contact.html">Send Message</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 nBogne. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
