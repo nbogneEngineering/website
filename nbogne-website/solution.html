@@ -19,7 +19,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="nBogne" class="logo-img">
+        <img src="Images/Logo.png" alt="nBogne" class="logo-img">
       </a>
       
       <nav class="nav">
@@ -29,7 +29,24 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       
-      <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly()">Book a Demo</a>
+      <button class="dark-mode-toggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      
+      <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly(); return false;">Book a Demo</a>
       
       <button class="mobile-toggle" aria-label="Menu">
         <span></span>
@@ -42,7 +59,7 @@
       <a href="solution.html" class="nav-link active">Solution</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
-      <a href="#book" class="btn btn-primary" onclick="openCalendly()">Book a Demo</a>
+      <a href="#book" class="btn btn-primary" onclick="openCalendly(); return false;">Book a Demo</a>
     </nav>
   </header>
 
@@ -408,7 +425,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 nBogne. All rights reserved.</p>
+        <p>&copy; 2026 nBogne. All rights reserved.</p>
         <p>Accra, Ghana</p>
       </div>
     </div>
@@ -419,9 +436,31 @@
   
   <script>
     function openCalendly() {
-      Calendly.initPopupWidget({url: 'https://calendly.com/nbogne/30min'});
+      if (typeof Calendly !== 'undefined') {
+        Calendly.initPopupWidget({url: 'https://calendly.com/tchiosekale6/30min'});
+      } else {
+        window.open('https://calendly.com/tchiosekale6/30min', '_blank');
+      }
       return false;
     }
+    
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+    
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (prefersDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
   </script>
   
   <script src="js/main.js"></script>

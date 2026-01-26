@@ -25,6 +25,7 @@
   
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-base: 1.125rem;
   
   /* Spacing */
   --space-xs: 0.5rem;
@@ -45,6 +46,29 @@
   --container: 1140px;
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --color-primary: #e2e8f0;
+  --color-primary-light: #94a3b8;
+  --color-secondary: #14b8a6;
+  --color-secondary-light: #2dd4bf;
+  --color-accent: #14b8a6;
+  
+  --color-text: #f1f5f9;
+  --color-text-light: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  
+  --color-bg: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-bg-dark: #020617;
+  
+  --color-border: #334155;
+  --color-border-light: #1e293b;
+  
+  --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,0.4);
+}
+
 /* Reset */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -59,10 +83,11 @@ html {
 
 body {
   font-family: var(--font-family);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--font-size-base);
+  line-height: 1.7;
   color: var(--color-text);
   background: var(--color-bg);
+  transition: background-color var(--transition), color var(--transition);
 }
 
 img {
@@ -84,17 +109,17 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 p {
@@ -121,6 +146,54 @@ p {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+[data-theme="dark"] .header {
+  background: rgba(15,23,42,0.95);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-right: var(--space-sm);
+}
+
+.dark-mode-toggle:hover {
+  background: var(--color-border);
+}
+
+.dark-mode-toggle svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.dark-mode-toggle .sun-icon {
+  display: none;
+}
+
+.dark-mode-toggle .moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .dark-mode-toggle .sun-icon {
+  display: block;
+}
+
+[data-theme="dark"] .dark-mode-toggle .moon-icon {
+  display: none;
 }
 
 .header-inner {
@@ -345,10 +418,11 @@ p {
   align-items: center;
   gap: var(--space-md);
   padding: var(--space-lg);
-  background: white;
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .diagram-node {
@@ -446,9 +520,10 @@ p {
 
 .problem-card {
   padding: var(--space-lg);
-  background: white;
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .problem-stat {
@@ -516,10 +591,10 @@ p {
   align-items: flex-start;
   gap: var(--space-md);
   padding: var(--space-md);
-  background: white;
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  transition: var(--transition);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .flow-step:hover {
@@ -863,9 +938,10 @@ p {
 .team-card {
   text-align: center;
   padding: var(--space-lg);
-  background: white;
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .team-photo {
@@ -928,9 +1004,10 @@ p {
 .founder-card {
   text-align: center;
   padding: var(--space-xl);
-  background: white;
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .founder-card .team-photo {
@@ -1006,10 +1083,11 @@ p {
 /* Contact Form */
 .contact-form {
   padding: var(--space-xl);
-  background: white;
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .form-group {
@@ -1029,10 +1107,23 @@ p {
   width: 100%;
   padding: 0.75rem 1rem;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 1.0625rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), background-color var(--transition), color var(--transition);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-textarea,
+[data-theme="dark"] .form-select {
+  background: var(--color-bg-alt);
+}
+
+[data-theme="dark"] .form-input::placeholder,
+[data-theme="dark"] .form-textarea::placeholder {
+  color: var(--color-text-muted);
 }
 
 .form-input:focus,
@@ -1100,5 +1191,56 @@ p {
 @media (max-width: 767px) {
   .hide-mobile {
     display: none;
+  }
+}
+
+/* =============================================================================
+   Additional Dark Mode Styles
+   ============================================================================= */
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+}
+
+[data-theme="dark"] .benefit-card {
+  background: var(--color-bg-alt);
+}
+
+[data-theme="dark"] .diagram-source {
+  background: var(--color-bg-alt);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .page-hero {
+  background: var(--color-bg-alt);
+}
+
+[data-theme="dark"] .cta-section {
+  background: var(--color-bg-alt);
+}
+
+[data-theme="dark"] .section-alt {
+  background: var(--color-bg-alt);
+}
+
+[data-theme="dark"] .contact-icon {
+  background: var(--color-bg);
+}
+
+[data-theme="dark"] .footer-logo {
+  filter: brightness(1);
+}
+
+/* Calendly Popup Styles */
+.calendly-popup-content {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .calendly-popup {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
   }
 }
