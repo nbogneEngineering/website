@@ -3,464 +3,426 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How nBogne works - Stateless health data exchange with format transformation, intelligent routing, and metadata-only auditing.">
-  <meta name="keywords" content="health data exchange, healthcare interoperability, FHIR, HL7, stateless architecture">
-  <meta name="author" content="nBogne">
+  <meta name="description" content="How nBogne works - stateless health data exchange with format transformation and guaranteed delivery.">
+  <title>How It Works — nBogne</title>
   
-  <title>Solution - nBogne Healthcare Data Exchange</title>
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%230891b2;stop-opacity:1' /><stop offset='100%' style='stop-color:%2306b6d4;stop-opacity:1' /></linearGradient></defs><rect fill='url(%23grad)' rx='20' width='100' height='100'/><circle cx='50' cy='40' r='8' fill='white'/><path d='M50 50 Q40 65 35 75' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/><path d='M50 50 Q60 65 65 75' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/></svg>">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
   
   <!-- Header -->
   <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="index.html" class="logo">
-          <img src="Images/Logo.png" alt="nBogne" class="logo-img">
-          <span>nBogne</span>
-        </a>
-        
-        <nav class="nav-desktop">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="solution.html" class="nav-link active">Solution</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
-        </nav>
-        
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="nBogne" class="logo-img">
+      </a>
+      
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="solution.html" class="nav-link active">Solution</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      
+      <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly()">Book a Demo</a>
+      
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+      </button>
     </div>
     
-    <!-- Mobile Navigation -->
     <nav class="nav-mobile">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solution.html" class="nav-link active">Solution</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
-      <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+      <a href="#book" class="btn btn-primary" onclick="openCalendly()">Book a Demo</a>
     </nav>
   </header>
-  
+
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <div class="page-hero-content">
-        <h1>How It Works</h1>
-        <p>Your medical data shouldn't need permission slips and phone calls to move between clinics. Here's how nBogne makes that possible—architecturally, not contractually.</p>
-      </div>
+      <h1>How nBogne Works</h1>
+      <p>
+        Your medical data shouldn't need phone calls and faxes to move between clinics. 
+        Here's how we make that possible — architecturally, not contractually.
+      </p>
     </div>
   </section>
-  
-  <!-- The Insight Section -->
+
+  <!-- The Insight -->
   <section class="section" id="how-it-works">
     <div class="container">
-      <div class="content-grid">
-        <div class="content-text">
-          <span class="section-label">The Insight</span>
-          <h3>SWIFT for Healthcare</h3>
-          <p>SWIFT moves trillions of dollars globally without ever holding the money. They route it, confirm delivery, log the transaction—but your money goes directly from your bank to theirs.</p>
-          <p>We borrowed that idea for medical records. nBogne shifts data between systems, translates formats, and logs everything. But your clinical data goes straight from source to destination. It never sits on our servers.</p>
-          <p><strong>Trust doesn't come from contracts. It comes from architecture.</strong></p>
-        </div>
-        <div class="content-image">🔄</div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Scale of Communication Section -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Growing Scale</span>
-        <h2>From Point-to-Point to Network Effects</h2>
-        <p>Watch how nBogne grows from connecting two systems to enabling entire healthcare ecosystems.</p>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-8); margin-top: var(--space-12);">
-        <!-- Scale 1: Two EMRs -->
-        <div class="scale-card" onclick="this.classList.toggle('active')" style="cursor: pointer; border: 2px solid var(--color-gray-200); border-radius: var(--radius-xl); padding: var(--space-8); transition: all var(--transition-base);">
-          <h4 style="margin-bottom: var(--space-6);">Stage 1: Two Systems</h4>
-          <svg viewBox="0 0 200 120" style="width: 100%; height: 150px; margin-bottom: var(--space-4);">
-            <rect x="20" y="40" width="50" height="40" rx="5" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-            <text x="45" y="65" text-anchor="middle" font-size="14" fill="var(--color-primary-900)" font-weight="600">EMR A</text>
-            
-            <line x1="70" y1="60" x2="130" y2="60" stroke="var(--color-accent-500)" stroke-width="2" marker-end="url(#arrowhead)"/>
-            
-            <rect x="130" y="40" width="50" height="40" rx="5" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-            <text x="155" y="65" text-anchor="middle" font-size="14" fill="var(--color-primary-900)" font-weight="600">EMR B</text>
-            
-            <defs>
-              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                <polygon points="0 0, 10 3, 0 6" fill="var(--color-accent-500)"/>
-              </marker>
-            </defs>
-          </svg>
-          <p style="font-size: 0.875rem; color: var(--color-gray-600);">1 connection point. Real-time patient record transfer between clinics.</p>
+      <div class="two-col">
+        <div class="col-text">
+          <p class="section-label">The Insight</p>
+          <h2>SWIFT for Healthcare</h2>
+          <p>
+            SWIFT moves trillions of dollars globally without ever holding the money. They route it, 
+            confirm delivery, log the transaction — but your money goes directly from your bank to theirs.
+          </p>
+          <p>
+            We borrowed that idea for medical records. nBogne routes data between systems, 
+            translates formats, and logs everything. But your clinical data goes straight from 
+            source to destination.
+          </p>
+          <p class="highlight-text">
+            Trust doesn't come from contracts. It comes from architecture.
+          </p>
         </div>
         
-        <!-- Scale 2: Hospital Network -->
-        <div class="scale-card" onclick="this.classList.toggle('active')" style="cursor: pointer; border: 2px solid var(--color-gray-200); border-radius: var(--radius-xl); padding: var(--space-8); transition: all var(--transition-base);">
-          <h4 style="margin-bottom: var(--space-6);">Stage 2: Hospital Network</h4>
-          <svg viewBox="0 0 200 120" style="width: 100%; height: 150px; margin-bottom: var(--space-4);">
-            <circle cx="50" cy="60" r="15" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-            <text x="50" y="65" text-anchor="middle" font-size="10" fill="var(--color-primary-900)" font-weight="600">Clinic 1</text>
-            
-            <circle cx="100" cy="30" r="15" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-            <text x="100" y="35" text-anchor="middle" font-size="10" fill="var(--color-primary-900)" font-weight="600">Clinic 2</text>
-            
-            <circle cx="100" cy="90" r="15" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-            <text x="100" y="95" text-anchor="middle" font-size="10" fill="var(--color-primary-900)" font-weight="600">Clinic 3</text>
-            
-            <circle cx="150" cy="60" r="15" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-            <text x="150" y="65" text-anchor="middle" font-size="10" fill="var(--color-primary-900)" font-weight="600">Hub</text>
-            
-            <line x1="60" y1="60" x2="90" y2="30" stroke="var(--color-accent-500)" stroke-width="1.5" opacity="0.6"/>
-            <line x1="60" y1="60" x2="90" y2="90" stroke="var(--color-accent-500)" stroke-width="1.5" opacity="0.6"/>
-            <line x1="65" y1="60" x2="135" y2="60" stroke="var(--color-accent-500)" stroke-width="2"/>
-            <line x1="100" y1="45" x2="140" y2="55" stroke="var(--color-accent-500)" stroke-width="1.5" opacity="0.6"/>
-            <line x1="100" y1="75" x2="140" y2="65" stroke="var(--color-accent-500)" stroke-width="1.5" opacity="0.6"/>
-          </svg>
-          <p style="font-size: 0.875rem; color: var(--color-gray-600);">6 connection points. Full network coordination and patient continuity of care.</p>
-        </div>
-        
-        <!-- Scale 3: National Network -->
-        <div class="scale-card" onclick="this.classList.toggle('active')" style="cursor: pointer; border: 2px solid var(--color-gray-200); border-radius: var(--radius-xl); padding: var(--space-8); transition: all var(--transition-base);">
-          <h4 style="margin-bottom: var(--space-6);">Stage 3: National Scale</h4>
-          <svg viewBox="0 0 200 120" style="width: 100%; height: 150px; margin-bottom: var(--space-4);">
-            <g opacity="0.4">
-              <circle cx="30" cy="30" r="12" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-              <circle cx="80" cy="25" r="12" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-              <circle cx="130" cy="35" r="12" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-              <circle cx="170" cy="45" r="12" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-              
-              <circle cx="25" cy="75" r="12" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-              <circle cx="75" cy="85" r="12" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-              <circle cx="125" cy="80" r="12" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-              <circle cx="175" cy="75" r="12" fill="var(--color-accent-300)" stroke="var(--color-accent-500)" stroke-width="2"/>
-            </g>
-            
-            <circle cx="100" cy="60" r="18" fill="var(--color-accent-500)" stroke="var(--color-accent-400)" stroke-width="2"/>
-            <text x="100" y="65" text-anchor="middle" font-size="12" fill="white" font-weight="600">nBogne</text>
-            
-            <line x1="30" y1="30" x2="88" y2="50" stroke="var(--color-accent-400)" stroke-width="1.5" opacity="0.5"/>
-            <line x1="80" y1="25" x2="95" y2="48" stroke="var(--color-accent-400)" stroke-width="1.5" opacity="0.5"/>
-            <line x1="130" y1="35" x2="112" y2="50" stroke="var(--color-accent-400)" stroke-width="1.5" opacity="0.5"/>
-          </svg>
-          <p style="font-size: 0.875rem; color: var(--color-gray-600);">50+ facilities. Real-time national health data visibility. Smart Africa ready.</p>
+        <div class="col-visual">
+          <div class="flow-diagram">
+            <div class="flow-step">
+              <div class="flow-number">1</div>
+              <div class="flow-content">
+                <strong>Arrive</strong>
+                <span>Your clinic sends patient data via FHIR API</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">2</div>
+              <div class="flow-content">
+                <strong>Adapt</strong>
+                <span>Convert to whatever format the destination uses</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">3</div>
+              <div class="flow-content">
+                <strong>Compress</strong>
+                <span>60-80% smaller for bandwidth-constrained links</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">4</div>
+              <div class="flow-content">
+                <strong>Deliver</strong>
+                <span>Retry with exponential backoff until confirmed</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">5</div>
+              <div class="flow-content">
+                <strong>Forget</strong>
+                <span>Clinical data purged within 60 seconds</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Core Capabilities -->
-  <section class="section how-it-works" id="features">
+  <section class="section section-alt" id="features">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Core Capabilities</span>
-        <h2>What nBogne Does</h2>
+        <h2>Core Capabilities</h2>
       </div>
       
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🔄</div>
-          <h4>Universal Transformation</h4>
-          <p style="margin-bottom: var(--space-4); font-weight: 500;">Real-time conversion between formats:</p>
-          <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: var(--space-2);">
-            <li>✓ HL7v2 ↔ FHIR R4</li>
-            <li>✓ JSON ↔ CSV</li>
-            <li>✓ Custom schemas</li>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>Format Transformation</h3>
+          <p>Real-time conversion between healthcare data standards.</p>
+          <ul class="feature-list mt-lg">
+            <li>HL7v2 (2.3, 2.5, 2.7)</li>
+            <li>FHIR R4</li>
+            <li>JSON / REST APIs</li>
+            <li>CSV / Flat files</li>
+            <li>Custom schemas on request</li>
           </ul>
-          <p class="text-small text-accent" style="margin-top: var(--space-4);">No middleware licensing. No custom dev per connection.</p>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">🗺️</div>
-          <h4>Intelligent Routing</h4>
-          <p style="margin-bottom: var(--space-4);">Smart delivery with compression:</p>
-          <p style="font-weight: 600; color: var(--color-accent-500); margin-bottom: var(--space-2);">500KB → <span class="number-highlight">100KB</span></p>
-          <p style="font-size: 0.9rem; color: var(--color-gray-600);">Z-Standard compression reduces payloads <span class="number-highlight">60-80%</span>. Critical for bandwidth-constrained environments.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">📋</div>
-          <h4>Metadata-Only Auditing</h4>
-          <p style="margin-bottom: var(--space-4);">We log what matters:</p>
-          <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: var(--space-2);">
-            <li>✓ Transaction ID & timestamp</li>
-            <li>✓ Source & destination</li>
-            <li>✓ Cryptographic hash</li>
+        <div class="benefit-card">
+          <h3>Intelligent Compression</h3>
+          <p>Critical for bandwidth-constrained environments.</p>
+          <ul class="feature-list mt-lg">
+            <li>60-80% payload reduction</li>
+            <li>Z-Standard algorithm</li>
+            <li>Works on 2G/GPRS networks</li>
+            <li>Typical 5KB → 1.5KB</li>
           </ul>
-          <p class="text-small text-accent" style="margin-top: var(--space-4);">Never: patient names, IDs, clinical content.</p>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h4>Stateless Processing</h4>
-          <p style="margin-bottom: var(--space-4);">Zero data at rest:</p>
-          <p style="font-weight: 600; color: var(--color-accent-500); margin-bottom: var(--space-2);">Maximum <span class="stat-badge">60 seconds</span> processing</p>
-          <p style="font-size: 0.9rem; color: var(--color-gray-600);">Data exists only in RAM. Auto-purge on completion. No database = no breach vector.</p>
+        <div class="benefit-card">
+          <h3>Guaranteed Delivery</h3>
+          <p>Messages persist until successfully delivered.</p>
+          <ul class="feature-list mt-lg">
+            <li>SQLite queue (survives power loss)</li>
+            <li>Exponential backoff retry</li>
+            <li>Dead letter queue for inspection</li>
+            <li>Delivery confirmation</li>
+          </ul>
+        </div>
+        
+        <div class="benefit-card">
+          <h3>Metadata-Only Audit</h3>
+          <p>Full compliance without storing patient data.</p>
+          <ul class="feature-list mt-lg">
+            <li>Transaction ID & timestamp</li>
+            <li>Source & destination</li>
+            <li>Cryptographic hash (integrity proof)</li>
+            <li>Never: names, IDs, clinical content</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Architecture Deep Dive -->
+
+  <!-- Data Journey Timeline -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Architecture</span>
         <h2>The Data Journey</h2>
         <p>What happens when EMR A needs to send a lab result to EMR B.</p>
       </div>
       
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <div class="timeline-marker">1</div>
           <div class="timeline-content">
-            <div class="timeline-date">Step 1</div>
             <h4>EMR Sends Data</h4>
-            <p>Source EMR sends patient data via API. Data arrives in whatever format the EMR supports—HL7v2, FHIR, proprietary JSON.</p>
+            <p>Source EMR sends patient data via API. Data arrives in whatever format the EMR supports — HL7v2, FHIR, proprietary JSON.</p>
           </div>
         </div>
         
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <div class="timeline-marker">2</div>
           <div class="timeline-content">
-            <div class="timeline-date">Step 2</div>
             <h4>nBogne Receives</h4>
             <p>Data loaded into RAM. Never touches disk. Clock starts on 60-second maximum processing window.</p>
           </div>
         </div>
         
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <div class="timeline-marker">3</div>
           <div class="timeline-content">
-            <div class="timeline-date">Step 3</div>
             <h4>Format Transformation</h4>
-            <p>Our format library identifies source format and transforms to destination's expected format. HL7v2 becomes FHIR. CSV becomes JSON.</p>
+            <p>Our format library identifies source format and transforms to destination's expected format automatically.</p>
           </div>
         </div>
         
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <div class="timeline-marker">4</div>
           <div class="timeline-content">
-            <div class="timeline-date">Step 4</div>
-            <h4>Compression & Routing</h4>
-            <p>Z-Standard compression reduces payload 60-80%. Routing rules determine destination. Compressed data transmitted.</p>
+            <h4>Compression & Transmission</h4>
+            <p>Payload compressed 60-80%. Routing rules determine destination. Transmitted with retry logic.</p>
           </div>
         </div>
         
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <div class="timeline-marker">5</div>
           <div class="timeline-content">
-            <div class="timeline-date">Step 5</div>
             <h4>Delivery Confirmation</h4>
-            <p>Destination EMR confirms receipt. nBogne logs metadata: transaction ID, timestamp, source, destination, size, status, hash.</p>
+            <p>Destination EMR confirms receipt. nBogne logs transaction metadata only: ID, timestamp, source, destination, size, status, hash.</p>
           </div>
         </div>
         
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <div class="timeline-marker">6</div>
           <div class="timeline-content">
-            <div class="timeline-date">Step 6</div>
             <h4>Data Purge</h4>
-            <p>Clinical data cleared from RAM. Total time: typically under 10 seconds. Maximum allowed: 60 seconds. No trace remains.</p>
+            <p>Clinical data cleared from RAM. Typical time: under 10 seconds. Maximum allowed: 60 seconds. No trace remains.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Security Section -->
   <section class="section section-dark" id="security">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" style="color: var(--color-accent-400);">Security Model</span>
         <h2>Security Through Architecture</h2>
         <p>Traditional security asks: "How do we protect stored data?" We ask: "What if there's nothing to protect?"</p>
       </div>
       
-      <div class="values-grid">
-        <div class="value-card">
+      <div class="security-grid">
+        <div class="security-card">
           <h4>No Data at Rest</h4>
           <p>Clinical data never touches disk. RAM-only processing means even physical server access yields nothing.</p>
         </div>
         
-        <div class="value-card">
+        <div class="security-card">
           <h4>No Honeypot</h4>
           <p>Centralized health data repositories are high-value targets. nBogne has no repository to target.</p>
         </div>
         
-        <div class="value-card">
+        <div class="security-card">
           <h4>Cryptographic Integrity</h4>
-          <p>Every transaction includes a SHA-256 hash proving content wasn't altered—without revealing content.</p>
+          <p>Every transaction includes a SHA-256 hash proving content wasn't altered — without revealing content.</p>
         </div>
         
-        <div class="value-card">
+        <div class="security-card">
           <h4>Breach = Metadata Only</h4>
-          <p>Worst-case breach exposes transaction logs: when data moved, between whom, how large. Never what was in it.</p>
+          <p>Worst case: transaction logs exposed. When data moved, between whom, how large. Never what was in it.</p>
         </div>
         
-        <div class="value-card">
+        <div class="security-card">
           <h4>Vendor Exit Safety</h4>
           <p>If nBogne shuts down tomorrow, no patient data is affected. We can't lose what we don't have.</p>
         </div>
         
-        <div class="value-card">
+        <div class="security-card">
           <h4>Compliance by Default</h4>
-          <p>Ghana DPA (zero retention), HIPAA (ATNA audit), GDPR (nothing to erase). Architecture handles compliance.</p>
+          <p>Ghana DPA, HIPAA, GDPR — architecture handles compliance. Nothing to erase because nothing is stored.</p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Integration Section -->
-  <section class="section">
+
+  <!-- Integration -->
+  <section class="section" id="integration">
     <div class="container">
-      <div class="content-grid reverse">
-        <div class="content-text">
-          <span class="section-label">Integration</span>
-          <h3>Works With What You Already Have</h3>
-          <p>We don't ask you to replace your EMR. We plug into it. Your system might be using HL7 from 2005, FHIR if you're modern, or proprietary JSON if you built your own. nBogne handles all of it.</p>
-          <p>Our format library supports the standards you're actually running:</p>
-          <ul style="margin-top: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2);">
-            <li style="display: flex; align-items: center; gap: var(--space-2);">
-              <span style="color: var(--color-accent-500);">✓</span> HL7v2 (because many hospitals still run it)
-            </li>
-            <li style="display: flex; align-items: center; gap: var(--space-2);">
-              <span style="color: var(--color-accent-500);">✓</span> FHIR R4 (the new standard)
-            </li>
-            <li style="display: flex; align-items: center; gap: var(--space-2);">
-              <span style="color: var(--color-accent-500);">✓</span> JSON / REST APIs
-            </li>
-            <li style="display: flex; align-items: center; gap: var(--space-2);">
-              <span style="color: var(--color-accent-500);">✓</span> CSV / Flat Files
-            </li>
-            <li style="display: flex; align-items: center; gap: var(--space-2);">
-              <span style="color: var(--color-accent-500);">✓</span> XML / Custom formats (we can adapt)
-            </li>
-          </ul>
+      <div class="two-col">
+        <div class="col-text">
+          <p class="section-label">Integration</p>
+          <h2>Works with what you have</h2>
+          <p>
+            We don't ask you to replace your EMR. We plug into it. Your system might be using 
+            HL7 from 2005, FHIR if you're modern, or proprietary JSON if you built your own. 
+            nBogne handles all of it.
+          </p>
+          <p>Integration typically takes days to weeks, not months. For EMRs with standard APIs, 
+             we can often connect in under a week.</p>
+          
+          <a href="contact.html" class="link-arrow mt-lg">Discuss your integration</a>
         </div>
-        <div class="content-image">🔌</div>
+        
+        <div class="col-visual">
+          <div class="benefit-card">
+            <h3>Supported Standards</h3>
+            <ul class="feature-list mt-lg">
+              <li>HL7v2 (2.3, 2.5, 2.7)</li>
+              <li>FHIR R4</li>
+              <li>JSON / REST APIs</li>
+              <li>CSV / Flat files</li>
+              <li>XML / Custom formats</li>
+            </ul>
+            <p class="mt-lg" style="font-size: 0.875rem; color: var(--color-text-muted);">
+              Don't see your format? Contact us — our library keeps growing.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  
-  <!-- Use Cases Section -->
-  <section class="section how-it-works">
+
+  <!-- Use Cases -->
+  <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Use Cases</span>
-        <h2>Who nBogne Serves</h2>
-        <p>Different stakeholders, one infrastructure.</p>
+        <h2>Who We Serve</h2>
       </div>
       
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">💻</div>
-          <h4>EMR Developers</h4>
-          <p>Add "interoperable" to your feature list without building it yourself. Bundle nBogne and give your users instant connectivity to any other system.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>EMR Developers</h3>
+          <p>
+            Add "interoperable" to your feature list without building it yourself. 
+            Bundle nBogne and give your users instant connectivity to any other system.
+          </p>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">🏥</div>
-          <h4>Hospital Networks</h4>
-          <p>Connect 5 facilities or 500. Unified patient experience across your network. Real-time data flow between locations.</p>
+        <div class="benefit-card">
+          <h3>Hospital Networks</h3>
+          <p>
+            Connect 5 facilities or 500. Unified patient experience across your network. 
+            Real-time data flow between locations.
+          </p>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">🏛️</div>
-          <h4>Ministries of Health</h4>
-          <p>National health information exchange without centralized storage. Real-time surveillance from metadata. Private sector visibility.</p>
+        <div class="benefit-card">
+          <h3>Ministries of Health</h3>
+          <p>
+            National health information exchange without centralized storage. Real-time 
+            surveillance from metadata. Private sector visibility.
+          </p>
+        </div>
+        
+        <div class="benefit-card">
+          <h3>NGOs & Implementers</h3>
+          <p>
+            Connect community health programs to national systems. Works on the 
+            networks you actually have in the field.
+          </p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- CTA Section -->
-  <section class="section cta-section">
+
+  <!-- CTA -->
+  <section class="section cta-section" id="book">
     <div class="container">
       <div class="cta-content">
-        <h2>See nBogne in Action</h2>
-        <p>We're building our sandbox now and would love to show you what stateless health data exchange looks like in practice.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary btn-large">Request a Demo</a>
-          <a href="about.html" class="btn btn-outline btn-large">Meet the Team</a>
-        </div>
+        <h2>See it in action</h2>
+        <p>
+          We're building our production sandbox and would love to show you what 
+          stateless health data exchange looks like in practice.
+        </p>
+        <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly()">Schedule a Demo</a>
+        <p class="cta-note">Or email <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a></p>
       </div>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-main">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="Images/Logo.png" alt="nBogne" class="logo-img">
-            <span>nBogne</span>
-          </a>
-          <p>Stateless health data exchange infrastructure. Connecting healthcare systems across Africa so records follow patients.</p>
+          <img src="images/logo.png" alt="nBogne" class="footer-logo">
+          <p>Health data infrastructure for Africa.<br>Data in motion, never at rest.</p>
         </div>
         
-        <div class="footer-col">
-          <h4 class="footer-title">Navigation</h4>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="solution.html">Solution</a>
-            <a href="about.html">About</a>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="solution.html">How It Works</a>
+            <a href="solution.html#security">Security</a>
+            <a href="solution.html#integration">Integration</a>
+          </div>
+          
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#team">Team</a>
             <a href="contact.html">Contact</a>
           </div>
-        </div>
-        
-        <div class="footer-col">
-          <h4 class="footer-title">Solution</h4>
-          <div class="footer-links">
-            <a href="solution.html#how-it-works">How It Works</a>
-            <a href="solution.html#features">Features</a>
-            <a href="solution.html#security">Security</a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h4 class="footer-title">Contact</h4>
-          <div class="footer-links">
-            <a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a>
+          
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a>
             <a href="tel:+233549253610">+233 549 253 610</a>
-            <a href="contact.html">Send Message</a>
+            <a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a>
           </div>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p class="footer-copyright">© 2025 nBogne. All rights reserved.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="LinkedIn">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <a href="#" aria-label="Twitter">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-        </div>
+        <p>&copy; 2025 nBogne. All rights reserved.</p>
+        <p>Accra, Ghana</p>
       </div>
     </div>
   </footer>
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  
+  <script>
+    function openCalendly() {
+      Calendly.initPopupWidget({url: 'https://calendly.com/nbogne/30min'});
+      return false;
+    }
+  </script>
   
   <script src="js/main.js"></script>
 </body>

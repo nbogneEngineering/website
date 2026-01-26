@@ -3,292 +3,290 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact nBogne - Get in touch to discuss healthcare data exchange solutions for your organization.">
-  <meta name="keywords" content="contact nBogne, healthcare interoperability, health data exchange">
-  <meta name="author" content="nBogne">
+  <meta name="description" content="Contact nBogne - Get in touch to discuss healthcare data exchange solutions.">
+  <title>Contact Us — nBogne</title>
   
-  <title>Contact Us - nBogne Healthcare Data Exchange</title>
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%230891b2;stop-opacity:1' /><stop offset='100%' style='stop-color:%2306b6d4;stop-opacity:1' /></linearGradient></defs><rect fill='url(%23grad)' rx='20' width='100' height='100'/><circle cx='50' cy='40' r='8' fill='white'/><path d='M50 50 Q40 65 35 75' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/><path d='M50 50 Q60 65 65 75' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/></svg>">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
   
   <!-- Header -->
   <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="index.html" class="logo">
-          <img src="Images/Logo.png" alt="nBogne" class="logo-img">
-          <span>nBogne</span>
-        </a>
-        
-        <nav class="nav-desktop">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="solution.html" class="nav-link">Solution</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="contact.html" class="nav-link active">Contact</a>
-          <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
-        </nav>
-        
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="nBogne" class="logo-img">
+      </a>
+      
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="solution.html" class="nav-link">Solution</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      
+      <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly()">Book a Demo</a>
+      
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+      </button>
     </div>
     
-    <!-- Mobile Navigation -->
     <nav class="nav-mobile">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solution.html" class="nav-link">Solution</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link active">Contact</a>
-      <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+      <a href="#book" class="btn btn-primary" onclick="openCalendly()">Book a Demo</a>
     </nav>
   </header>
-  
+
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <div class="page-hero-content">
-        <h1>Let's Talk</h1>
-        <p>If you're tired of manual handoffs, duplicate tests, and patient records stuck in silos—we'd love to hear about your problem. We're building for people like you.</p>
-      </div>
+      <h1>Let's Talk</h1>
+      <p>
+        Whether you're an EMR developer, run a hospital network, or work at a ministry of health — 
+        we'd love to hear about your challenges with health data exchange.
+      </p>
     </div>
   </section>
-  
+
   <!-- Contact Section -->
   <section class="section">
     <div class="container">
-      <div class="contact-grid">
+      <div class="contact-layout">
         <div class="contact-info">
-          <h3>Send Us a Message</h3>
-          <p>Whether you run a clinic, manage an EMR, work at a ministry, or just want to learn more—reach out. We respond personally.</p>
+          <h2>Get in touch</h2>
+          <p>
+            Have a specific question or want to explore how nBogne could work for your organization? 
+            Reach out directly or book a call.
+          </p>
           
           <div class="contact-methods">
             <div class="contact-method">
-              <div class="contact-method-icon">📧</div>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
               <div>
-                <p class="contact-method-label">Email</p>
-                <p class="contact-method-value">
-                  <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a>
-                </p>
+                <h4>Email</h4>
+                <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a>
               </div>
             </div>
             
             <div class="contact-method">
-              <div class="contact-method-icon">📱</div>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
               <div>
-                <p class="contact-method-label">Phone / WhatsApp</p>
-                <p class="contact-method-value">
-                  <a href="tel:+233549253610">+233 549 253 610</a>
-                </p>
+                <h4>Phone / WhatsApp</h4>
+                <a href="tel:+233549253610">+233 549 253 610</a>
               </div>
             </div>
             
             <div class="contact-method">
-              <div class="contact-method-icon">📍</div>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
               <div>
-                <p class="contact-method-label">Location</p>
-                <p class="contact-method-value">Accra, Ghana</p>
+                <h4>Location</h4>
+                <p>Accra, Ghana</p>
               </div>
             </div>
-          </div>
-          
-          <div style="margin-top: var(--space-10); padding-top: var(--space-8); border-top: 1px solid var(--color-gray-200);">
-            <h4 style="margin-bottom: var(--space-4);">Who Should Reach Out?</h4>
-            <ul style="display: flex; flex-direction: column; gap: var(--space-3);">
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3);">
-                <span style="color: var(--color-accent-500); font-weight: 600;">→</span>
-                <span><strong>EMR Developers</strong> who want to add interoperability to their product</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3);">
-                <span style="color: var(--color-accent-500); font-weight: 600;">→</span>
-                <span><strong>Hospital Networks</strong> with multiple facilities that need to share data</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3);">
-                <span style="color: var(--color-accent-500); font-weight: 600;">→</span>
-                <span><strong>Health Ministries</strong> exploring national health information exchange</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3);">
-                <span style="color: var(--color-accent-500); font-weight: 600;">→</span>
-                <span><strong>Investors</strong> interested in African health tech infrastructure</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3);">
-                <span style="color: var(--color-accent-500); font-weight: 600;">→</span>
-                <span><strong>Partners</strong> who want to help build connected healthcare</span>
-              </li>
-            </ul>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Schedule a Call</h4>
+                <a href="#" onclick="openCalendly(); return false;">Book on Calendly</a>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div class="contact-form-card">
-          <h4 style="margin-bottom: var(--space-6);">Send Us a Message</h4>
+        <form class="contact-form" id="contact-form" method="POST" action="https://formspree.io/f/xnnegzqy" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name *</label>
+            <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
+          </div>
           
-          <form id="contact-form" method="POST" action="https://formspree.io/f/xnnegzqy" onsubmit="handleFormSubmit(event)">
-            <div class="form-group">
-              <label for="name" class="form-label">Your Name *</label>
-              <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
-            </div>
-            
-            <div class="form-group">
-              <label for="email" class="form-label">Email Address *</label>
-              <input type="email" id="email" name="email" class="form-input" required placeholder="john@example.com">
-            </div>
-            
-            <div class="form-group">
-              <label for="organization" class="form-label">Organization</label>
-              <input type="text" id="organization" name="organization" class="form-input" placeholder="Your company or facility">
-            </div>
-            
-            <div class="form-group">
-              <label for="role" class="form-label">Your Role</label>
-              <select id="role" name="role" class="form-input">
-                <option value="">Select your role...</option>
-                <option value="emr-developer">EMR Developer</option>
-                <option value="hospital-administrator">Hospital Administrator</option>
-                <option value="network-operator">Network Operator</option>
-                <option value="ministry-official">Ministry of Health</option>
-                <option value="investor">Investor</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="message" class="form-label">Message *</label>
-              <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your needs or questions..."></textarea>
-            </div>
-            
-            <button type="submit" class="btn btn-primary btn-large form-submit" id="submitBtn">Send Message</button>
-            <p id="form-status" class="form-note" style="margin-top: var(--space-4); font-size: 0.875rem; color: var(--color-gray-500); display: none;"></p>
-            <p class="form-note" style="margin-top: var(--space-4); font-size: 0.875rem; color: var(--color-gray-500);">We'll get back to you within 24 hours at tsteve@nbogne.com</p>
-          </form>
-        </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" id="email" name="email" class="form-input" required placeholder="john@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="organization" class="form-label">Organization</label>
+            <input type="text" id="organization" name="organization" class="form-input" placeholder="Your company or facility">
+          </div>
+          
+          <div class="form-group">
+            <label for="role" class="form-label">Your Role</label>
+            <select id="role" name="role" class="form-select">
+              <option value="">Select your role...</option>
+              <option value="emr-developer">EMR Developer</option>
+              <option value="hospital-administrator">Hospital Administrator</option>
+              <option value="network-operator">Network Operator</option>
+              <option value="ministry-official">Ministry of Health</option>
+              <option value="investor">Investor</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Message *</label>
+            <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your needs or questions..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg form-submit">Send Message</button>
+          <p id="form-status" class="form-note" style="display: none;"></p>
+          <p class="form-note">We typically respond within 24 hours.</p>
+        </form>
       </div>
     </div>
   </section>
-  
+
   <!-- FAQ Section -->
-  <section class="section how-it-works">
+  <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Common Questions</span>
-        <h2>Before You Reach Out</h2>
-        <p>Quick answers to questions we often hear.</p>
+        <h2>Common Questions</h2>
       </div>
       
-      <div class="features-grid">
-        <div class="feature-card">
+      <div class="faq-list">
+        <div class="faq-item">
           <h4>What stage is nBogne at?</h4>
-          <p>We have a working prototype with validated routing and format conversion. We're now building our production sandbox and seeking first pilots with EMR vendors and hospital networks.</p>
+          <p>
+            We have a working prototype with validated routing and format conversion. 
+            We're now building our production sandbox and seeking first pilots with EMR vendors and hospital networks.
+          </p>
         </div>
         
-        <div class="feature-card">
+        <div class="faq-item">
           <h4>What does it cost?</h4>
-          <p>Pricing depends on your setup—EMR integrations, transaction volume, support level. We're flexible during pilot phase. Reach out and we'll discuss what makes sense for you.</p>
+          <p>
+            Pricing depends on your setup — EMR integrations, transaction volume, support level. 
+            We're flexible during pilot phase. Reach out and we'll discuss what makes sense for you.
+          </p>
         </div>
         
-        <div class="feature-card">
+        <div class="faq-item">
           <h4>How long does integration take?</h4>
-          <p>For EMRs with standard APIs, days to weeks. For complex legacy systems, we work with you on custom adapters. Either way, faster than building interoperability yourself.</p>
+          <p>
+            For EMRs with standard APIs, days to weeks. For complex legacy systems, we work with you on custom adapters. 
+            Either way, faster than building interoperability yourself.
+          </p>
         </div>
         
-        <div class="feature-card">
+        <div class="faq-item">
           <h4>What formats do you support?</h4>
-          <p>HL7v2 (2.3, 2.5, 2.7), FHIR R4, JSON/REST, CSV, and XML. If you have something else, let's talk—our format library keeps growing.</p>
+          <p>
+            HL7v2 (2.3, 2.5, 2.7), FHIR R4, JSON/REST, CSV, and XML. If you have something else, let's talk — 
+            our format library keeps growing.
+          </p>
         </div>
         
-        <div class="feature-card">
+        <div class="faq-item">
           <h4>Can we pilot first?</h4>
-          <p>Absolutely. We prefer pilots. Prove it works for your environment before committing. That's how trust gets built—through demonstration, not promises.</p>
+          <p>
+            Absolutely. We prefer pilots. Prove it works for your environment before committing. 
+            That's how trust gets built — through demonstration, not promises.
+          </p>
         </div>
         
-        <div class="feature-card">
+        <div class="faq-item">
           <h4>Where do you operate?</h4>
-          <p>Starting in Ghana, with plans for Kenya and Rwanda. If you're elsewhere in Africa, still reach out—we're always interested in the right partnerships.</p>
+          <p>
+            Starting in Ghana, with plans for Kenya and Rwanda. If you're elsewhere in Africa, 
+            still reach out — we're always interested in the right partnerships.
+          </p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- CTA Section -->
-  <section class="section cta-section">
+
+  <!-- CTA -->
+  <section class="section cta-section" id="book">
     <div class="container">
       <div class="cta-content">
-        <h2>Prefer to Just Learn More First?</h2>
-        <p>No pressure. Explore our solution and come back when you're ready.</p>
-        <div class="cta-buttons">
-          <a href="solution.html" class="btn btn-primary btn-large">See How It Works</a>
-          <a href="about.html" class="btn btn-outline btn-large">Meet the Team</a>
-        </div>
+        <h2>Prefer a call?</h2>
+        <p>
+          Book a 30-minute conversation to discuss your specific needs.
+        </p>
+        <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly()">Schedule on Calendly</a>
       </div>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-main">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="Images/Logo.png" alt="nBogne" class="logo-img">
-            <span>nBogne</span>
-          </a>
-          <p>Stateless health data exchange infrastructure. Connecting healthcare systems across Africa so records follow patients.</p>
+          <img src="images/logo.png" alt="nBogne" class="footer-logo">
+          <p>Health data infrastructure for Africa.<br>Data in motion, never at rest.</p>
         </div>
         
-        <div class="footer-col">
-          <h4 class="footer-title">Navigation</h4>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="solution.html">Solution</a>
-            <a href="about.html">About</a>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="solution.html">How It Works</a>
+            <a href="solution.html#security">Security</a>
+            <a href="solution.html#integration">Integration</a>
+          </div>
+          
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#team">Team</a>
             <a href="contact.html">Contact</a>
           </div>
-        </div>
-        
-        <div class="footer-col">
-          <h4 class="footer-title">Solution</h4>
-          <div class="footer-links">
-            <a href="solution.html#how-it-works">How It Works</a>
-            <a href="solution.html#features">Features</a>
-            <a href="solution.html#security">Security</a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h4 class="footer-title">Contact</h4>
-          <div class="footer-links">
-            <a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a>
+          
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a>
             <a href="tel:+233549253610">+233 549 253 610</a>
-            <a href="contact.html">Send Message</a>
+            <a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a>
           </div>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p class="footer-copyright">© 2025 nBogne. All rights reserved.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="LinkedIn">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <a href="#" aria-label="Twitter">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-        </div>
+        <p>&copy; 2025 nBogne. All rights reserved.</p>
+        <p>Accra, Ghana</p>
       </div>
     </div>
   </footer>
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  
+  <script>
+    function openCalendly() {
+      Calendly.initPopupWidget({url: 'https://calendly.com/nbogne/30min'});
+      return false;
+    }
+  </script>
   
   <script src="js/main.js"></script>
 </body>
