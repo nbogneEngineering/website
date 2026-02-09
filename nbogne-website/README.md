@@ -1,102 +1,69 @@
-# nBogne Website
+# nBogne Website (Updated)
 
-Clean, professional website for nBogne.
+Updated website with new strategic positioning based on Samuel Darko conversation insights.
+
+## Key Changes
+
+### Messaging Updates
+- **Hero**: "Win bids in connectivity-challenged markets" (vendor-focused)
+- **Value Prop**: "Your EHR + nBogne = Competitive Advantage"
+- **Target Customers**: Research Orgs → Hospital Chains → EMR Vendors → Governments
+- **Platform Vision**: "Health is the first vertical" - expansion to law enforcement, voter registers, e-gov
+- **Technical Scope**: 5-15 KB records only, medical images → future (mesh/LEO)
+
+### Customer Focus Shift
+- From: End-user pain (patients, clinicians)
+- To: Client pain (vendors losing bids, $600/month Starlink, ministries going blind)
 
 ## Setup
 
-1. Add your images (see below)
-2. Set up your Calendly link (currently `https://calendly.com/nbogne/30min`)
-3. Deploy to your hosting
+### 1. Formspree Contact Form
+The contact form uses Formspree. To route submissions to `tchiosekale6@gmail.com`:
 
-## Required Images
+1. Go to [formspree.io](https://formspree.io)
+2. Sign up/login with `tchiosekale6@gmail.com`
+3. Create a new form
+4. Copy the form ID (e.g., `xnnegzqy`)
+5. Update `contact.html` line ~82: `action="https://formspree.io/f/YOUR_FORM_ID"`
+6. Update `js/main.js` line ~77: same URL
 
-### Logo & Favicon
-- `images/logo.png` — Your nBogne logo (recommend: 180x40 or similar)
-- `images/favicon.png` — 32x32 favicon
+**Current placeholder**: `xnnegzqy` (update this)
 
-### Team Photos (About page)
-Place in `images/team/`:
-- `thierry.jpg` — Thierry Tchio Sekale (recommend: 400x400, square)
-- `delvin.jpg` — Delvin Marimo
-- `nana-kofi.jpg` — Nana Kofi Quakyi
-- `yaw.jpg` — Yaw Asare-Aboagye
-- `emmanuel.jpg` — Emmanuel Mills
-- `benjamin.jpg` — Benjamin Kyeremeh Oppong
-- `samuel.jpg` — Samuel Darko
-- `naeem.jpg` — Naeem Zafar
+### 2. Add Images
+Place in `Images/` folder:
+- `Logo.png` — Your nBogne logo
+- `THierry.png` — Thierry Tchio Sekale photo
+- `Alma.png` — Alma photo
+- `Africa_CDC_partnership.webp` — Africa image
+- Advisor photos: `Nana Kofi.png`, `Yaw.png`, `Ahmed-abubakar.png`, `Benjamin.png`, `Samuel.png`, `Naeem.png`
+- Credential logos: `Ashesi.png`, `UC-Berkeley.png`, `KPMG.png`
 
-### Company Logos (About page - credentials)
-Place in `images/logos/`:
-- `ashesi.png` — Ashesi University logo (recommend: height 28px)
-- `berkeley.png` — UC Berkeley logo
-- `kpmg.png` — KPMG logo
-- `amazon.png` — Amazon logo
-- `siemens.png` — Siemens logo
+### 3. Calendly
+Already configured to use: `https://calendly.com/tchiosekale6/30min`
 
-## Calendly Setup
-
-1. Create a Calendly account if you don't have one
-2. Create a 30-minute meeting type
-3. Replace `https://calendly.com/nbogne/30min` in all HTML files with your actual Calendly link
-
-Search for `calendly.com/nbogne` to find all instances.
-
-## Contact Form
-
-The form uses Formspree. Current endpoint: `https://formspree.io/f/xnnegzqy`
-
-To use your own:
-1. Create a free Formspree account
-2. Create a new form
-3. Replace the action URL in `contact.html`
+### 4. Email Display
+- **Displayed**: `tsteve@nbogne.com`
+- **Form submissions**: Go to `tchiosekale6@gmail.com` (via Formspree)
 
 ## File Structure
 
 ```
 nbogne-website/
-├── index.html          # Home page
-├── solution.html       # How it works
-├── about.html          # Team & story
-├── contact.html        # Contact form
+├── index.html          # Home page (updated messaging)
+├── solution.html       # How it works (technical scope, partnership model)
+├── about.html          # Team & story (platform vision)
+├── contact.html        # Contact form (partnership focus)
 ├── css/
-│   └── styles.css      # All styles
+│   └── styles.css      # All styles (unchanged)
 ├── js/
-│   └── main.js         # Minimal JavaScript
-└── images/
-    ├── logo.png
-    ├── favicon.png
-    ├── team/
-    │   ├── thierry.jpg
-    │   ├── delvin.jpg
-    │   └── ...
-    └── logos/
-        ├── ashesi.png
-        ├── berkeley.png
-        └── ...
-```
-
-## Colors Used
-
-```css
---color-primary: #1a2b3c;      /* Deep navy - headings */
---color-secondary: #0f766e;    /* Teal - buttons, accents */
---color-text: #1e293b;         /* Body text */
---color-text-light: #475569;   /* Secondary text */
+│   └── main.js         # JavaScript (form handling)
+└── Images/             # Add your images here
 ```
 
 ## Deployment
 
-This is a static site. Deploy to:
+Static site - deploy to:
 - **Vercel**: `vercel`
-- **Netlify**: Drag and drop folder
+- **Netlify**: Drag and drop
 - **GitHub Pages**: Push to repo, enable Pages
 - **Any static host**: Upload files
-
-## Notes
-
-- No external CSS frameworks (Tailwind, Bootstrap)
-- Single CSS file for simplicity
-- Minimal JavaScript (~80 lines)
-- Mobile responsive
-- Calendly popup integration ready
-- Formspree form integration ready

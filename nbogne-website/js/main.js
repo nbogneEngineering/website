@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 });
 
-// Contact Form Handler
+// Contact Form Handler - sends to tchiosekale6@gmail.com
 function handleFormSubmit(event) {
   event.preventDefault();
   
@@ -80,7 +80,8 @@ function handleFormSubmit(event) {
   
   const formData = new FormData(form);
   
-  fetch(form.action, {
+  // Use Formspree - update form ID at formspree.io to forward to tchiosekale6@gmail.com
+  fetch('https://formspree.io/f/xnnegzqy', {
     method: 'POST',
     body: formData,
     headers: { 'Accept': 'application/json' }

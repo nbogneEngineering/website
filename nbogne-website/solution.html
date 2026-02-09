@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How nBogne works - stateless health data exchange with format transformation and guaranteed delivery.">
+  <meta name="description" content="How nBogne works - plug-and-play transport layer for health data over cellular.">
   <title>How It Works — nBogne</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,8 +68,8 @@
     <div class="container">
       <h1>How nBogne Works</h1>
       <p>
-        Patient data shouldn't require phone calls and faxes to move between facilities. 
-        Here's how we make seamless exchange possible — architecturally, not contractually.
+        Plug-and-play transport layer for health data over cellular. 
+        Works with ANY EHR. Zero changes to existing workflows.
       </p>
     </div>
   </section>
@@ -80,18 +80,17 @@
       <div class="two-col">
         <div class="col-text">
           <p class="section-label">The Insight</p>
-          <h2>SWIFT for Healthcare</h2>
+          <h2>Transport Layer, Not Application Layer</h2>
           <p>
-            SWIFT moves trillions of dollars globally without ever holding the money. They route it, 
-            confirm delivery, log the transaction — but funds go directly from one bank to another.
+            Most interoperability solutions work at the application layer — they require 
+            internet to function. When internet fails, they fail.
           </p>
           <p>
-            We borrowed that idea for medical records. nBogne routes data between systems, 
-            translates formats, and logs everything. But clinical data goes straight from 
-            source to destination.
+            nBogne works at the transport layer. We don't touch your protocols, your data 
+            formats, or your workflows. We just move the packets — over whatever network is available.
           </p>
           <p class="highlight-text">
-            Trust doesn't come from contracts. It comes from architecture.
+            Internet → GPRS → SMS. Automatic fallback. Seamless switching.
           </p>
         </div>
         
@@ -100,36 +99,29 @@
             <div class="flow-step">
               <div class="flow-number">1</div>
               <div class="flow-content">
-                <strong>Arrive</strong>
-                <span>Source facility sends patient data via FHIR API</span>
+                <strong>Your EHR sends data</strong>
+                <span>Any format: FHIR, HL7, JSON, XML</span>
               </div>
             </div>
             <div class="flow-step">
               <div class="flow-number">2</div>
               <div class="flow-content">
-                <strong>Adapt</strong>
-                <span>Convert to whatever format the destination uses</span>
+                <strong>nBogne compresses</strong>
+                <span>60-80% smaller for low bandwidth</span>
               </div>
             </div>
             <div class="flow-step">
               <div class="flow-number">3</div>
               <div class="flow-content">
-                <strong>Compress</strong>
-                <span>60-80% smaller for bandwidth-constrained links</span>
+                <strong>Auto-select channel</strong>
+                <span>Best available: internet, GPRS, or SMS</span>
               </div>
             </div>
             <div class="flow-step">
               <div class="flow-number">4</div>
               <div class="flow-content">
-                <strong>Deliver</strong>
-                <span>Retry with exponential backoff until confirmed</span>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-number">5</div>
-              <div class="flow-content">
-                <strong>Forget</strong>
-                <span>Clinical data purged within 60 seconds</span>
+                <strong>Deliver & confirm</strong>
+                <span>Retry until confirmed delivery</span>
               </div>
             </div>
           </div>
@@ -147,25 +139,36 @@
       
       <div class="benefits-grid">
         <div class="benefit-card">
-          <h3>Format Transformation</h3>
-          <p>Real-time conversion between healthcare data standards.</p>
+          <h3>Vendor-Agnostic</h3>
+          <p>Works with existing systems without modification.</p>
           <ul class="feature-list mt-lg">
+            <li>OpenMRS, OpenEMR</li>
+            <li>DHIS2, OpenHIM</li>
+            <li>FHIR R4 compatible</li>
             <li>HL7v2 (2.3, 2.5, 2.7)</li>
-            <li>FHIR R4</li>
             <li>JSON / REST APIs</li>
-            <li>CSV / Flat files</li>
-            <li>Custom schemas on request</li>
+          </ul>
+        </div>
+        
+        <div class="benefit-card">
+          <h3>Automatic Fallback</h3>
+          <p>Seamless switching between channels.</p>
+          <ul class="feature-list mt-lg">
+            <li>Internet (when available)</li>
+            <li>GPRS/2G (primary fallback)</li>
+            <li>SMS (ultimate fallback)</li>
+            <li>No manual intervention</li>
           </ul>
         </div>
         
         <div class="benefit-card">
           <h3>Intelligent Compression</h3>
-          <p>Critical for bandwidth-constrained environments.</p>
+          <p>Optimized for low-bandwidth environments.</p>
           <ul class="feature-list mt-lg">
             <li>60-80% payload reduction</li>
+            <li>5-15 KB typical packet size</li>
+            <li>Works on 20-50 kbps</li>
             <li>Z-Standard algorithm</li>
-            <li>Works on 2G/GPRS networks</li>
-            <li>Typical 5KB → 1.5KB</li>
           </ul>
         </div>
         
@@ -173,82 +176,47 @@
           <h3>Guaranteed Delivery</h3>
           <p>Messages persist until successfully delivered.</p>
           <ul class="feature-list mt-lg">
-            <li>SQLite queue (survives power loss)</li>
+            <li>Local queue (survives power loss)</li>
             <li>Exponential backoff retry</li>
-            <li>Dead letter queue for inspection</li>
             <li>Delivery confirmation</li>
-          </ul>
-        </div>
-        
-        <div class="benefit-card">
-          <h3>Metadata-Only Audit</h3>
-          <p>Full compliance without storing patient data.</p>
-          <ul class="feature-list mt-lg">
-            <li>Transaction ID & timestamp</li>
-            <li>Source & destination</li>
-            <li>Cryptographic hash (integrity proof)</li>
-            <li>Never: names, IDs, clinical content</li>
+            <li>Dead letter inspection</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Data Journey Timeline -->
+  <!-- Technical Scope -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>The Data Journey</h2>
-        <p>What happens when EMR A needs to send a lab result to EMR B.</p>
+        <h2>Technical Scope</h2>
+        <p>What we handle today — and what's coming.</p>
       </div>
       
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker">1</div>
-          <div class="timeline-content">
-            <h4>EMR Sends Data</h4>
-            <p>Source EMR sends patient data via API. Data arrives in whatever format the EMR supports — HL7v2, FHIR, proprietary JSON.</p>
-          </div>
+      <div class="two-col">
+        <div class="benefit-card">
+          <h3>Today: Medical Records</h3>
+          <p>Text-based health records averaging 5-15 KB after compression. This covers 90%+ of routine health data transmission needs.</p>
+          <ul class="feature-list mt-lg">
+            <li>Patient demographics</li>
+            <li>Lab results (text)</li>
+            <li>Prescriptions</li>
+            <li>Visit summaries</li>
+            <li>Surveillance data</li>
+          </ul>
         </div>
         
-        <div class="timeline-item">
-          <div class="timeline-marker">2</div>
-          <div class="timeline-content">
-            <h4>nBogne Receives</h4>
-            <p>Data loaded into RAM. Never touches disk. Clock starts on 60-second maximum processing window.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker">3</div>
-          <div class="timeline-content">
-            <h4>Format Transformation</h4>
-            <p>Our format library identifies source format and transforms to destination's expected format automatically.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker">4</div>
-          <div class="timeline-content">
-            <h4>Compression & Transmission</h4>
-            <p>Payload compressed 60-80%. Routing rules determine destination. Transmitted with retry logic.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker">5</div>
-          <div class="timeline-content">
-            <h4>Delivery Confirmation</h4>
-            <p>Destination EMR confirms receipt. nBogne logs transaction metadata only: ID, timestamp, source, destination, size, status, hash.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker">6</div>
-          <div class="timeline-content">
-            <h4>Data Purge</h4>
-            <p>Clinical data cleared from RAM. Typical time: under 10 seconds. Maximum allowed: 60 seconds. No trace remains.</p>
-          </div>
+        <div class="benefit-card">
+          <h3>Future: Medical Imaging</h3>
+          <p>Medical images require different infrastructure. We're exploring mesh networks and LEO satellite options for this use case.</p>
+          <ul class="feature-list mt-lg">
+            <li>X-rays, CT scans</li>
+            <li>Ultrasound images</li>
+            <li>Mesh network transmission</li>
+            <li>Low Earth Orbit options</li>
+            <li>Coming 2027+</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -258,39 +226,29 @@
   <section class="section section-dark" id="security">
     <div class="container">
       <div class="section-header">
-        <h2>Security Through Architecture</h2>
-        <p>Traditional security asks: "How do we protect stored data?" We ask: "What if there's nothing to protect?"</p>
+        <h2>Security by Design</h2>
+        <p>Stateless architecture means we can't lose what we don't store.</p>
       </div>
       
       <div class="security-grid">
         <div class="security-card">
           <h4>No Data at Rest</h4>
-          <p>Clinical data never touches disk. RAM-only processing means even physical server access yields nothing.</p>
+          <p>Clinical data passes through RAM only. Never touches disk. 60-second maximum processing window.</p>
         </div>
         
         <div class="security-card">
-          <h4>No Honeypot</h4>
-          <p>Centralized health data repositories are high-value targets. nBogne has no repository to target.</p>
+          <h4>End-to-End Encryption</h4>
+          <p>Data encrypted from source to destination. We route but cannot read.</p>
         </div>
         
         <div class="security-card">
-          <h4>Cryptographic Integrity</h4>
-          <p>Every transaction includes a SHA-256 hash proving content wasn't altered — without revealing content.</p>
+          <h4>Metadata-Only Audit</h4>
+          <p>Transaction logs contain: timestamp, source, destination, size, hash. Never clinical content.</p>
         </div>
         
         <div class="security-card">
-          <h4>Breach = Metadata Only</h4>
-          <p>Worst case: transaction logs exposed. When data moved, between whom, how large. Never what was in it.</p>
-        </div>
-        
-        <div class="security-card">
-          <h4>Vendor Exit Safety</h4>
-          <p>If nBogne shuts down tomorrow, no patient data is affected. We can't lose what we don't have.</p>
-        </div>
-        
-        <div class="security-card">
-          <h4>Compliance by Default</h4>
-          <p>Ghana DPA, HIPAA, GDPR — architecture handles compliance. Nothing to erase because nothing is stored.</p>
+          <h4>Compliance Ready</h4>
+          <p>Ghana DPA, HIPAA, GDPR compatible. Architecture handles compliance by default.</p>
         </div>
       </div>
     </div>
@@ -302,30 +260,32 @@
       <div class="two-col">
         <div class="col-text">
           <p class="section-label">Integration</p>
-          <h2>Works with existing infrastructure</h2>
+          <h2>Days to weeks, not months</h2>
           <p>
-            nBogne integrates with existing EMR systems rather than replacing them. Whether facilities use 
-            HL7 from 2005, FHIR for modern implementations, or proprietary JSON for custom-built solutions — 
-            nBogne handles all of it.
+            nBogne is designed for rapid deployment. For EMRs with standard APIs, 
+            integration typically takes days. For complex legacy systems, we work 
+            with your team on custom adapters.
           </p>
-          <p>Integration typically takes days to weeks, not months. For EMRs with standard APIs, 
-             connections can often be established in under a week.</p>
+          <p>
+            Either way, faster than building offline capability in-house. And we 
+            handle the maintenance, updates, and carrier relationships.
+          </p>
           
           <a href="contact.html" class="link-arrow mt-lg">Discuss your integration</a>
         </div>
         
         <div class="col-visual">
           <div class="benefit-card">
-            <h3>Supported Standards</h3>
+            <h3>Integration Options</h3>
             <ul class="feature-list mt-lg">
-              <li>HL7v2 (2.3, 2.5, 2.7)</li>
-              <li>FHIR R4</li>
-              <li>JSON / REST APIs</li>
-              <li>CSV / Flat files</li>
-              <li>XML / Custom formats</li>
+              <li>REST API (recommended)</li>
+              <li>FHIR R4 native</li>
+              <li>HL7v2 adapter</li>
+              <li>Custom webhook</li>
+              <li>SDK (Python, Node.js)</li>
             </ul>
             <p class="mt-lg" style="font-size: 0.875rem; color: var(--color-text-muted);">
-              Don't see your format? Contact us — our library keeps growing.
+              Don't see your stack? Contact us — we're flexible.
             </p>
           </div>
         </div>
@@ -333,43 +293,47 @@
     </div>
   </section>
 
-  <!-- Use Cases -->
+  <!-- Partnership Model -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <h2>Who We Serve</h2>
+        <h2>Partnership Model</h2>
+        <p>We're not competing with EMR vendors. We're making you win.</p>
       </div>
       
       <div class="benefits-grid">
         <div class="benefit-card">
-          <h3>EMR Developers</h3>
+          <h3>For EMR Vendors</h3>
           <p>
-            Add "interoperable" to product feature lists without building it in-house. 
-            Bundle nBogne and provide users with instant connectivity to any other system.
+            Bundle nBogne with your solution. Add "works offline" to your feature list 
+            without building it. Win bids in connectivity-challenged markets where 
+            competitors can't operate.
           </p>
         </div>
         
         <div class="benefit-card">
-          <h3>Hospital Networks</h3>
+          <h3>For Hospital Networks</h3>
           <p>
-            Connect 5 facilities or 500. Deliver a unified patient experience across the network 
-            with real-time data flow between locations.
+            Stop paying $600+/facility/month for Starlink. nBogne works on existing 
+            cellular infrastructure. Connect your entire network with reliable 
+            real-time data flow.
           </p>
         </div>
         
         <div class="benefit-card">
-          <h3>Ministries of Health</h3>
+          <h3>For Research Organizations</h3>
           <p>
-            National health information exchange without centralized storage. Real-time 
-            surveillance from metadata. Private sector visibility.
+            Field trials in remote areas? Maintain 100% data flow to sponsors even 
+            without internet. No more batch uploads when you return to connectivity.
           </p>
         </div>
         
         <div class="benefit-card">
-          <h3>NGOs & Implementers</h3>
+          <h3>For Governments</h3>
           <p>
-            Connect community health programs to national systems. Works on the 
-            networks you actually have in the field.
+            National health information exchange without centralized storage risk. 
+            Real-time disease surveillance. Infrastructure that scales from pilot to 
+            nationwide deployment.
           </p>
         </div>
       </div>
@@ -382,8 +346,8 @@
       <div class="cta-content">
         <h2>See it in action</h2>
         <p>
-          We're building our production sandbox and would love to show you what 
-          stateless health data exchange looks like in practice.
+          Let's discuss how nBogne can become your competitive advantage 
+          in connectivity-challenged markets.
         </p>
         <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly()">Schedule a Demo</a>
         <p class="cta-note">Or email <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a></p>
@@ -397,7 +361,7 @@
       <div class="footer-main">
         <div class="footer-brand">
           <img src="Images/Logo.png" alt="nBogne" class="footer-logo">
-          <p>Health data infrastructure for Africa.<br>Data in motion, never at rest.</p>
+          <p>Offline-first transport layer for health data.<br>Health is the first vertical.</p>
         </div>
         
         <div class="footer-links">

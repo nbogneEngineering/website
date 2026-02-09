@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact nBogne - Get in touch to discuss healthcare data exchange solutions.">
+  <meta name="description" content="Contact nBogne - Partner with us for offline-first health data transport.">
   <title>Contact Us — nBogne</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,10 +66,10 @@
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <h1>Let's Talk</h1>
+      <h1>Let's Talk Partnership</h1>
       <p>
-        Whether you represent an EMR vendor, manage a hospital network, or work with a ministry of health — 
-        we welcome the opportunity to discuss your health data exchange challenges.
+        Whether you're an EMR vendor, hospital network, research organization, or ministry — 
+        we'd love to discuss how nBogne can become your competitive advantage.
       </p>
     </div>
   </section>
@@ -81,7 +81,7 @@
         <div class="contact-info">
           <h2>Get in touch</h2>
           <p>
-            Have a specific question or want to explore how nBogne could serve your organization's needs? 
+            Have a specific question or want to explore a partnership? 
             Reach out directly or schedule a call.
           </p>
           
@@ -141,7 +141,11 @@
           </div>
         </div>
         
+        <!-- Form sends to tchiosekale6@gmail.com via Formspree -->
+        <!-- NOTE: Create a form at formspree.io linked to tchiosekale6@gmail.com and replace the form ID below -->
         <form class="contact-form" id="contact-form" method="POST" action="https://formspree.io/f/xnnegzqy" onsubmit="handleFormSubmit(event)">
+          <input type="hidden" name="_replyto" value="">
+          
           <div class="form-group">
             <label for="name" class="form-label">Name *</label>
             <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
@@ -158,21 +162,34 @@
           </div>
           
           <div class="form-group">
-            <label for="role" class="form-label">Role</label>
+            <label for="role" class="form-label">I am a...</label>
             <select id="role" name="role" class="form-select">
-              <option value="">Select a role...</option>
-              <option value="emr-developer">EMR Developer / Vendor</option>
-              <option value="hospital-administrator">Hospital Administrator</option>
-              <option value="network-operator">Network Operator</option>
+              <option value="">Select your role...</option>
+              <option value="emr-vendor">EMR Vendor / Developer</option>
+              <option value="hospital-network">Hospital Network Operator</option>
+              <option value="research-org">Research Organization</option>
               <option value="ministry-official">Ministry of Health</option>
+              <option value="implementing-partner">Implementing Partner</option>
               <option value="investor">Investor</option>
               <option value="other">Other</option>
             </select>
           </div>
           
           <div class="form-group">
+            <label for="interest" class="form-label">I'm interested in...</label>
+            <select id="interest" name="interest" class="form-select">
+              <option value="">Select your interest...</option>
+              <option value="partnership">Partnership / Bundling</option>
+              <option value="pilot">Pilot Program</option>
+              <option value="integration">Technical Integration</option>
+              <option value="investment">Investment</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
             <label for="message" class="form-label">Message *</label>
-            <textarea id="message" name="message" class="form-textarea" required placeholder="Please describe your organization's needs or questions..."></textarea>
+            <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your organization and what you're looking to solve..."></textarea>
           </div>
           
           <button type="submit" class="btn btn-primary btn-lg form-submit">Send Message</button>
@@ -194,48 +211,48 @@
         <div class="faq-item">
           <h4>What stage is nBogne at?</h4>
           <p>
-            We have a working prototype with validated routing and format conversion. 
-            We're now building our production sandbox and seeking first pilots with EMR vendors and hospital networks.
+            We have a working prototype with validated routing and compression. 
+            We're now seeking first pilots with research organizations and EMR vendors.
           </p>
         </div>
         
         <div class="faq-item">
-          <h4>What does it cost?</h4>
+          <h4>How does the partnership model work?</h4>
           <p>
-            Pricing depends on implementation requirements — EMR integrations, transaction volume, and support level. 
-            We offer flexible terms during pilot phase. Contact us to discuss what makes sense for your organization.
+            EMR vendors bundle nBogne as a feature. We handle the transport layer; you handle 
+            the rest. Revenue share model available. White-label option for enterprise deals.
           </p>
         </div>
         
         <div class="faq-item">
           <h4>How long does integration take?</h4>
           <p>
-            For EMRs with standard APIs, days to weeks. For complex legacy systems, we collaborate on custom adapters. 
-            Either way, faster than building interoperability in-house.
+            For EMRs with standard APIs (REST, FHIR), days to weeks. For complex legacy systems, 
+            we work with your team on custom adapters. Either way, faster than building in-house.
           </p>
         </div>
         
         <div class="faq-item">
-          <h4>What formats do you support?</h4>
+          <h4>What about medical images?</h4>
           <p>
-            HL7v2 (2.3, 2.5, 2.7), FHIR R4, JSON/REST, CSV, and XML. For other formats, contact us — 
-            our format library continues to expand.
+            Today: text-based records only (5-15 KB). Medical images require different infrastructure — 
+            we're exploring mesh networks and LEO satellite options for future releases.
           </p>
         </div>
         
         <div class="faq-item">
           <h4>Can we pilot first?</h4>
           <p>
-            Absolutely. We encourage pilots. Demonstrate value in your specific environment before full commitment. 
-            Trust is built through demonstration, not promises.
+            Absolutely. We encourage pilots. Demonstrate value in your specific environment before 
+            full commitment. Trust is built through demonstration, not promises.
           </p>
         </div>
         
         <div class="faq-item">
           <h4>Where do you operate?</h4>
           <p>
-            Starting in Ghana, with plans for Kenya and Rwanda. If you're elsewhere in Africa, 
-            still reach out — we're always interested in the right partnerships.
+            Starting in Ghana, with conversations in Rwanda, Kenya, Uganda, and Cameroon. 
+            If you're elsewhere in the Global South, still reach out — we're interested in the right partnerships.
           </p>
         </div>
       </div>
@@ -248,7 +265,7 @@
       <div class="cta-content">
         <h2>Prefer a call?</h2>
         <p>
-          Book a 30-minute conversation to discuss your specific needs.
+          Book a 30-minute conversation to discuss partnership opportunities.
         </p>
         <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly()">Schedule on Calendly</a>
       </div>
@@ -261,7 +278,7 @@
       <div class="footer-main">
         <div class="footer-brand">
           <img src="Images/Logo.png" alt="nBogne" class="footer-logo">
-          <p>Health data infrastructure for Africa.<br>Data in motion, never at rest.</p>
+          <p>Offline-first transport layer for health data.<br>Health is the first vertical.</p>
         </div>
         
         <div class="footer-links">
@@ -303,13 +320,11 @@
       if (typeof Calendly !== 'undefined') {
         Calendly.initPopupWidget({url: 'https://calendly.com/tchiosekale6/30min'});
       } else {
-        // Fallback: open Calendly in new tab if widget fails to load
         window.open('https://calendly.com/tchiosekale6/30min', '_blank');
       }
       return false;
     }
     
-    // Dark mode toggle function
     function toggleDarkMode() {
       const html = document.documentElement;
       const currentTheme = html.getAttribute('data-theme');
@@ -318,7 +333,6 @@
       localStorage.setItem('theme', newTheme);
     }
     
-    // Check for saved theme preference on page load
     (function() {
       const savedTheme = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
