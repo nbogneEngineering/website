@@ -10,8 +10,9 @@
 </head>
 <body>
 
+  <!-- ═══════════════════ HEADER ═══════════════════ -->
   <header class="header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="index.html" class="logo"><img src="Images/Logo.png" alt="nBogne" class="logo-img"></a>
       <nav class="nav">
         <a href="index.html" class="nav-link active">Home</a>
@@ -20,10 +21,7 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       <div class="header-actions">
-        <button class="dark-toggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()">
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
+        <button class="theme-toggle" aria-label="Toggle light/dark mode" title="Switch theme"><span class="icon-moon">&#9789;</span><span class="icon-sun">&#9788;</span></button>
         <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly(); return false;">Book a Demo</a>
         <button class="mobile-toggle" aria-label="Menu"><span></span><span></span></button>
       </div>
@@ -33,123 +31,268 @@
       <a href="solution.html" class="nav-link">Solution</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
-      <a href="#book" class="btn btn-primary" onclick="openCalendly(); return false;">Book a Demo</a>
+      <a href="#book" class="btn btn-primary" onclick="openCalendly(); return false;" style="margin-top:0.5rem;">Book a Demo</a>
     </nav>
   </header>
 
+  <!-- ═══════════════════ HERO ═══════════════════ -->
   <section class="hero">
+    <!-- Live constellation canvas -->
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+
     <div class="container">
-      <div class="hero-content">
-        <p class="hero-label">Building in Ghana · Scaling Globally</p>
-        <h1>Africa's health systems go blind when internet fails.</h1>
-        <p class="hero-text">94% of the continent has cellular coverage, but only 38% has broadband. nBogne is the cellular-first data transmission layer that plugs into any EHR and keeps data flowing where internet can't.</p>
-        <div class="hero-actions">
-          <a href="#book" class="btn btn-primary btn-lg" onclick="openCalendly(); return false;">Partner With Us</a>
-          <a href="solution.html" class="btn btn-outline btn-lg">How It Works</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-diagram">
-          <div class="diagram-node diagram-source"><span class="diagram-label">Your EHR</span></div>
-          <div class="diagram-line">
-            <svg viewBox="0 0 120 20" class="diagram-arrow"><line x1="0" y1="10" x2="100" y2="10" stroke="currentColor" stroke-width="2"/><polygon points="100,10 90,5 90,15" fill="currentColor"/></svg>
-            <span class="diagram-sublabel">2G / GPRS / SMS</span>
+      <div class="hero-layout">
+        <!-- Left: Copy -->
+        <div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Building in Ghana &middot; Scaling Globally
           </div>
-          <div class="diagram-node diagram-dest"><span class="diagram-label">Central Server</span></div>
+
+          <h1>
+            Africa&#8217;s health data<br>
+            <span class="gradient-text typed-text" data-phrases='["goes blind when internet fails.","deserves infrastructure that works.","can flow over any network."]'></span>
+          </h1>
+
+          <p class="hero-text">
+            94&#37; of the continent has cellular coverage, but only 38&#37; has broadband.
+            <strong style="color:var(--text)">nBogne</strong> is the cellular-first data transmission layer that plugs into any&nbsp;EHR and keeps data flowing where&nbsp;internet&nbsp;can&#8217;t.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#book" class="btn btn-primary btn-lg" onclick="openCalendly(); return false;">Partner With Us</a>
+            <a href="solution.html" class="btn btn-outline btn-lg">How It Works &rarr;</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">
+              <svg class="trust-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              End-to-end encrypted
+            </div>
+            <div class="trust-item">
+              <svg class="trust-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Vendor-agnostic
+            </div>
+            <div class="trust-item">
+              <svg class="trust-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              5-min integration
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Animated diagram -->
+        <div class="hero-visual">
+          <div class="hero-diagram-card">
+            <div class="diagram-header">Live Data Flow</div>
+            <div class="diagram-flow">
+              <div class="diagram-node source">
+                <div class="diagram-node-icon">&#x1F3E5;</div>
+                <div><strong>Your EHR</strong><br><span style="font-size:0.75rem;color:var(--text-muted)">OpenMRS &middot; DHIS2 &middot; FHIR</span></div>
+              </div>
+              <div class="diagram-connector">
+                <div class="line"></div>
+                <span class="diagram-label">compress &amp; encrypt</span>
+              </div>
+              <div class="diagram-node nbogne">
+                <div class="diagram-node-icon">&#x26A1;</div>
+                <div><strong>nBogne Layer</strong><br><span style="font-size:0.75rem;color:var(--teal-light)">Internet &rarr; GPRS &rarr; SMS</span></div>
+              </div>
+              <div class="diagram-connector">
+                <div class="line"></div>
+                <span class="diagram-label">auto-fallback</span>
+              </div>
+              <div class="diagram-node dest">
+                <div class="diagram-node-icon">&#x1F5A5;</div>
+                <div><strong>Central Server</strong><br><span style="font-size:0.75rem;color:var(--text-muted)">Confirmed delivery</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- ═══════════════════ SOCIAL PROOF MARQUEE ═══════════════════ -->
+  <div class="marquee-section">
+    <p class="marquee-label">Compatible with</p>
+    <div class="marquee-track">
+      <img src="Images/logos/openmrs.svg" alt="OpenMRS" onerror="this.style.display='none'">
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">OpenMRS</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">DHIS2</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">OpenHIM</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">FHIR R4</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">HL7v2</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">REST APIs</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">JSON / XML</span>
+      <!-- duplicate for endless scroll -->
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">OpenMRS</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">DHIS2</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">OpenHIM</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">FHIR R4</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">HL7v2</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">REST APIs</span>
+      <span style="color:var(--text-muted);font-size:0.8125rem;white-space:nowrap;opacity:0.5">JSON / XML</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ THE GAP — Stats ═══════════════════ -->
+  <section class="stats-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
+        <div class="glow-line"></div>
         <h2>The Infrastructure Gap</h2>
         <p>Standards exist. Middleware exists. EMRs exist. What's missing is a transport layer that works when internet doesn't.</p>
       </div>
-      <div class="stats-grid">
+
+      <div class="stats-grid stagger">
         <div class="stat-card">
-          <div class="stat-value">38%</div>
+          <div class="stat-value" data-count="38" data-suffix="%">0%</div>
           <p class="stat-text">Broadband access in Africa (ITU 2025). Yet 94% have cellular coverage ready to carry data.</p>
         </div>
         <div class="stat-card">
-          <div class="stat-value">~100K</div>
+          <div class="stat-value" data-count="100" data-prefix="~" data-suffix="K">0K</div>
           <p class="stat-text">Health facilities in sub-Saharan Africa lack reliable internet connectivity (WHO estimate).</p>
         </div>
         <div class="stat-card">
-          <div class="stat-value">70+</div>
+          <div class="stat-value" data-count="70" data-suffix="+">0+</div>
           <p class="stat-text">Countries run DHIS2 and OpenHIM. The software exists — transmission is the gap.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
+  <!-- ═══════════════════ VALUE PROP — Two Column ═══════════════════ -->
+  <section class="section">
     <div class="container">
       <div class="two-col">
-        <div class="col-text">
-          <p class="section-label">For EMR Vendors &amp; Networks</p>
-          <h2>Your EHR + nBogne = Competitive Advantage</h2>
+        <div class="col-text reveal-left">
+          <span class="section-label">For EMR Vendors &amp; Networks</span>
+          <h2>Your EHR + nBogne = <span class="gradient-text">Competitive Advantage</span></h2>
           <p>Vendors lose bids in low-connectivity markets. Hospital networks pay $640+/year per facility for Starlink — or accept data loss. Ministries go blind for days during outages.</p>
           <p>nBogne is the plug-and-play transmission layer that solves this. We work with any EHR system. Zero changes to existing workflows. Automatic fallback from internet to GPRS to SMS.</p>
           <p class="highlight">Partner with us. They sell. You win.</p>
-          <a href="solution.html" class="link-arrow mt-lg">Learn how it works</a>
+          <br>
+          <a href="solution.html" class="btn-ghost">Learn how it works</a>
         </div>
-        <div class="col-visual">
+
+        <div class="col-visual reveal-right">
           <div class="flow-list">
-            <div class="flow-step"><div class="flow-num">1</div><div class="flow-body"><strong>Vendor-Agnostic</strong><span>OpenMRS, DHIS2, OpenHIM, FHIR, HL7v2</span></div></div>
-            <div class="flow-step"><div class="flow-num">2</div><div class="flow-body"><strong>Automatic Fallback</strong><span>Internet → GPRS → SMS seamlessly</span></div></div>
-            <div class="flow-step"><div class="flow-num">3</div><div class="flow-body"><strong>$0 Hardware</strong><span>Uses existing phones and systems</span></div></div>
-            <div class="flow-step"><div class="flow-num">4</div><div class="flow-body"><strong>80–97% Compression</strong><span>5–15 KB packets work on 2G</span></div></div>
+            <div class="flow-step">
+              <div class="flow-num">1</div>
+              <div class="flow-body">
+                <strong>Vendor-Agnostic</strong>
+                <span>OpenMRS, DHIS2, OpenHIM, FHIR, HL7v2</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-num">2</div>
+              <div class="flow-body">
+                <strong>Automatic Fallback</strong>
+                <span>Internet &rarr; GPRS &rarr; SMS seamlessly</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-num">3</div>
+              <div class="flow-body">
+                <strong>$0 Hardware</strong>
+                <span>Uses existing phones and systems</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-num">4</div>
+              <div class="flow-body">
+                <strong>80–97% Compression</strong>
+                <span>5–15 KB packets work on 2G</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header"><h2>Who We Serve</h2></div>
-      <div class="benefit-grid">
-        <div class="benefit-card"><h3>EMR Vendors</h3><p>Add "works offline" to your feature list without building it. Bundle nBogne and win bids in markets where competitors can't operate.</p></div>
-        <div class="benefit-card"><h3>Hospital Networks</h3><p>Stop paying $640+/yr per facility for LEO satellite. Connect facilities with real-time data flow over existing cellular infrastructure.</p></div>
-        <div class="benefit-card"><h3>Research Organizations</h3><p>Field trials in remote areas? 100% data flow to sponsors. No more batch uploads when you return to connectivity.</p></div>
-        <div class="benefit-card"><h3>Ministries of Health</h3><p>Disease surveillance in hours, not days. Only 20% of African countries report weekly surveillance on time (WHO). nBogne changes that.</p></div>
-      </div>
-    </div>
-  </section>
-
+  <!-- ═══════════════════ WHO WE SERVE ═══════════════════ -->
   <section class="section section-dark">
     <div class="container">
-      <div class="stats-bar">
-        <div><div class="stat-value">5–15 KB</div><div class="stat-label">Typical packet size</div></div>
-        <div><div class="stat-value">80–97%</div><div class="stat-label">Data compression</div></div>
-        <div><div class="stat-value">20–50 kbps</div><div class="stat-label">Minimum bandwidth</div></div>
-        <div><div class="stat-value">$110–510</div><div class="stat-label">Annual cost per facility</div></div>
+      <div class="section-header reveal">
+        <div class="glow-line"></div>
+        <h2>Who We Serve</h2>
+      </div>
+
+      <div class="audience-grid stagger">
+        <div class="audience-card">
+          <div class="audience-icon">&#x1F4BB;</div>
+          <h3>EMR Vendors</h3>
+          <p>Add "works offline" to your feature list without building it. Bundle nBogne and win bids in markets where competitors can't operate.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">&#x1F3E5;</div>
+          <h3>Hospital Networks</h3>
+          <p>Stop paying $640+/yr per facility for LEO satellite. Connect facilities with real-time data flow over existing cellular infrastructure.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">&#x1F52C;</div>
+          <h3>Research Organizations</h3>
+          <p>Field trials in remote areas? 100% data flow to sponsors. No more batch uploads when you return to connectivity.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">&#x1F3DB;</div>
+          <h3>Ministries of Health</h3>
+          <p>Disease surveillance in hours, not days. Only 20% of African countries report weekly surveillance on time (WHO). nBogne changes that.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
+  <!-- ═══════════════════ METRICS BAR ═══════════════════ -->
+  <section class="stats-bar-section">
     <div class="container">
-      <div class="section-header">
-        <h2>Health Is the First Vertical</h2>
+      <div class="stats-bar stagger">
+        <div>
+          <div class="stat-value" data-count="15" data-prefix="5–" data-suffix=" KB">0 KB</div>
+          <div class="stat-label">Typical packet size</div>
+        </div>
+        <div>
+          <div class="stat-value" data-count="97" data-prefix="80–" data-suffix="%">0%</div>
+          <div class="stat-label">Data compression</div>
+        </div>
+        <div>
+          <div class="stat-value" data-count="50" data-prefix="20–" data-suffix=" kbps">0 kbps</div>
+          <div class="stat-label">Minimum bandwidth</div>
+        </div>
+        <div>
+          <div class="stat-value" data-count="510" data-prefix="$" data-suffix="">0</div>
+          <div class="stat-label">Annual cost per facility</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EXPANDING THE VISION ═══════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="glow-line"></div>
+        <h2>Health Is the <span class="gradient-text">First Vertical</span></h2>
         <p>The same infrastructure gap blinds law enforcement, voter registers, national ID, and e-governance. We're starting with health — then expanding across the Global South.</p>
       </div>
     </div>
   </section>
 
-  <section class="section cta-section" id="book">
+  <!-- ═══════════════════ CTA ═══════════════════ -->
+  <section class="cta-section" id="book">
+    <div class="cta-orb"></div>
     <div class="container">
-      <div class="cta-content">
+      <div class="cta-content reveal-scale">
         <h2>Ready to win more bids?</h2>
         <p>Whether you're an EMR vendor, hospital network, or ministry of health — let's discuss how nBogne becomes your competitive advantage.</p>
         <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly(); return false;">Book a 30-Minute Call</a>
-        <p class="cta-note">Or reach us at <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a></p>
+        <p class="cta-note">Or reach us at <a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a></p>
       </div>
     </div>
   </section>
 
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
@@ -158,22 +301,36 @@
           <p>Cellular-first data transmission layer.<br>Health is the first vertical.</p>
         </div>
         <div class="footer-links">
-          <div class="footer-col"><h4>Product</h4><a href="solution.html">How It Works</a><a href="solution.html#security">Security</a><a href="solution.html#integration">Integration</a></div>
-          <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="about.html#team">Team</a><a href="contact.html">Contact</a></div>
-          <div class="footer-col"><h4>Connect</h4><a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a><a href="tel:+233549253610">+233 549 253 610</a><a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a></div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="solution.html">How It Works</a>
+            <a href="solution.html#security">Security</a>
+            <a href="solution.html#integration">Integration</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#team">Team</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a>
+            <a href="tel:+233549253610">+233 549 253 610</a>
+            <a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 nBogne. All rights reserved.</p><p>Accra, Ghana</p></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 nBogne. All rights reserved.</p>
+        <p>Accra, Ghana</p>
+      </div>
     </div>
   </footer>
 
+  <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <script>
-    function openCalendly(){if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/tchiosekale6/30min'});}else{window.open('https://calendly.com/tchiosekale6/30min','_blank');}return false;}
-    function toggleDarkMode(){const h=document.documentElement;const t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);localStorage.setItem('theme',t);}
-    (function(){const s=localStorage.getItem('theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s)document.documentElement.setAttribute('data-theme',s);else if(p)document.documentElement.setAttribute('data-theme','dark');})();
-  </script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -10,8 +10,9 @@
 </head>
 <body>
 
+  <!-- ═══════════════════ HEADER ═══════════════════ -->
   <header class="header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="index.html" class="logo"><img src="Images/Logo.png" alt="nBogne" class="logo-img"></a>
       <nav class="nav">
         <a href="index.html" class="nav-link">Home</a>
@@ -20,10 +21,7 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       <div class="header-actions">
-        <button class="dark-toggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()">
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
+        <button class="theme-toggle" aria-label="Toggle light/dark mode" title="Switch theme"><span class="icon-moon">&#9789;</span><span class="icon-sun">&#9788;</span></button>
         <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly(); return false;">Book a Demo</a>
         <button class="mobile-toggle" aria-label="Menu"><span></span><span></span></button>
       </div>
@@ -33,73 +31,96 @@
       <a href="solution.html" class="nav-link">Solution</a>
       <a href="about.html" class="nav-link active">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
-      <a href="#book" class="btn btn-primary" onclick="openCalendly(); return false;">Book a Demo</a>
+      <a href="#book" class="btn btn-primary" onclick="openCalendly(); return false;" style="margin-top:0.5rem;">Book a Demo</a>
     </nav>
   </header>
 
+  <!-- ═══════════════════ PAGE HERO ═══════════════════ -->
   <section class="page-hero">
     <div class="container">
-      <h1>About nBogne</h1>
-      <p>"nBogne" means "they have received it" in Twi. It's the confirmation that data arrived where it needed to go.</p>
+      <span class="section-label">Our Story</span>
+      <h1>About <span class="gradient-text">nBogne</span></h1>
+      <p>"nBogne" means <em>"they have received it"</em> in Twi. It's the confirmation that data arrived where it needed to go.</p>
     </div>
   </section>
 
+  <!-- ═══════════════════ ORIGIN STORY ═══════════════════ -->
   <section class="section">
     <div class="container">
       <div class="two-col">
-        <div class="col-text">
-          <p class="section-label">Our Story</p>
-          <h2>Built from real frustration</h2>
+        <div class="col-text reveal-left">
+          <span class="section-label">The Origin</span>
+          <h2>Built from <span class="gradient-text">real frustration</span></h2>
           <p>We've watched health workers re-enter data after 3-day internet outages. We've seen ministries go blind during outbreaks because systems couldn't sync. We've heard vendors lose bids because they couldn't guarantee offline operation.</p>
           <p>The infrastructure exists — 94% cellular coverage, 70+ countries on DHIS2. What's missing is the transport layer that works when internet doesn't.</p>
           <p class="highlight">We built nBogne because the Global South deserves infrastructure that actually works.</p>
         </div>
-        <div class="col-visual">
-          <div style="background: var(--bg-warm); border-radius: 6px; padding: 3rem; text-align: center;">
-            <img src="Images/Africa_CDC_partnership.webp" alt="Health infrastructure in Africa">
+        <div class="col-visual reveal-right">
+          <div style="border-radius: 20px; overflow: hidden; border: 1px solid var(--border);">
+            <img src="Images/Africa_CDC_partnership.webp" alt="Health infrastructure in Africa" style="width:100%; display:block;">
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ═══════════════════ MISSION & VISION ═══════════════════ -->
   <section class="section section-dark">
     <div class="container">
-      <div class="benefit-grid">
-        <div class="security-card"><h4>Our Mission</h4><p>To make data flow reliably across connectivity-challenged environments — starting with health, then expanding to every sector that needs it.</p></div>
-        <div class="security-card"><h4>Our Vision</h4><p>Health is the first vertical. The same problem exists across law enforcement, voter registers, national ID, and e-governance. We're building the transport backbone for the Global South.</p></div>
+      <div class="benefit-grid stagger" style="max-width:860px;margin:0 auto;">
+        <div class="benefit-card" style="border-top:2px solid;border-image:var(--gradient-1) 1;">
+          <h3>&#x1F3AF; Our Mission</h3>
+          <p>To make data flow reliably across connectivity-challenged environments — starting with health, then expanding to every sector that needs it.</p>
+        </div>
+        <div class="benefit-card" style="border-top:2px solid;border-image:var(--gradient-1) 1;">
+          <h3>&#x1F30D; Our Vision</h3>
+          <p>Health is the first vertical. The same problem exists across law enforcement, voter registers, national ID, and e-governance. We're building the transport backbone for the Global South.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
+  <!-- ═══════════════════ WHY PARTNERS WIN ═══════════════════ -->
+  <section class="section">
     <div class="container">
       <div class="two-col">
-        <div class="col-text">
-          <p class="section-label">Why Partners Win</p>
-          <h2>We're not competing with you</h2>
+        <div class="col-text reveal-left">
+          <span class="section-label">Why Partners Win</span>
+          <h2>We're not <span class="gradient-text">competing</span> with you</h2>
           <p>EMR vendors don't want to build transport layers. Hospital networks don't want to manage carrier relationships. Ministries don't want to maintain connectivity infrastructure.</p>
           <p>We handle the hard part so you can focus on your core business. Bundle nBogne with your solution, win more bids, and let us worry about keeping data flowing.</p>
           <p class="highlight">Your EHR + nBogne = Competitive advantage in connectivity-challenged markets.</p>
         </div>
-        <div class="col-visual">
+        <div class="col-visual reveal-right">
           <div class="benefit-card">
             <h3>Partner Benefits</h3>
-            <ul class="feature-list mt-lg"><li>Win bids others can't</li><li>No R&D investment required</li><li>White-label option available</li><li>Revenue share model</li><li>Technical support included</li></ul>
+            <ul class="feature-list mt-lg">
+              <li>Win bids others can't</li>
+              <li>No R&amp;D investment required</li>
+              <li>White-label option available</li>
+              <li>Revenue share model</li>
+              <li>Technical support included</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="team">
+  <!-- ═══════════════════ TEAM ═══════════════════ -->
+  <section class="section section-dark" id="team">
     <div class="container">
-      <div class="section-header"><h2>Our Team</h2><p>Local healthcare experience meets global technical expertise.</p></div>
+      <div class="section-header reveal">
+        <div class="glow-line"></div>
+        <h2>Our Team</h2>
+        <p>Local healthcare experience meets global technical expertise.</p>
+      </div>
 
-      <div class="founders-grid">
+      <!-- Founders -->
+      <div class="founders-grid stagger">
         <div class="founder-card">
           <div class="team-photo"><img src="Images/THierry.png" alt="Thierry Tchio Sekale"></div>
-          <h4>Thierry Tchio Sekale</h4>
+          <h4>Thierry</h4>
           <p class="team-role">CEO &amp; Co-Founder</p>
           <div class="team-credentials">
             <img src="Images/Ashesi.png" alt="Ashesi" class="credential">
@@ -111,71 +132,175 @@
           <div class="team-photo"><img src="Images/Alma.png" alt="Alma"></div>
           <h4>Alma</h4>
           <p class="team-role">Health &amp; Growth</p>
-          <p style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.5rem;">MPH UC Berkeley · 6 yrs lab experience · MoH Cameroon</p>
+         <div class="team-credentials">
+            <img src="Images/BerkMPH.png" alt="BerkMPH" class="credential">
+            <img src="Images/plan.png" alt="plan" class="credential">
+            <img src="Images/MINSANT.png" alt="MINSANT" class="credential">
+          </div>
         </div>
       </div>
 
-      <div class="section-header mt-lg"><h3>Engineering</h3></div>
-      <div class="team-grid" style="max-width: 560px; margin: 0 auto;">
-        <div class="team-card"><h4>Romaric Lonfonyuy</h4><p class="team-role">Lead Engineer</p><p class="team-bio">Backend &amp; OpenMRS expertise</p></div>
-        <div class="team-card"><h4>Stephen Azongo</h4><p class="team-role">Lead Engineer</p><p class="team-bio">Backend &amp; FHIR integration</p></div>
+      <!-- Engineering -->
+      <div class="section-header mt-lg reveal"><h3>Engineering</h3></div>
+      <div class="team-grid stagger" style="max-width: 560px; margin: 0 auto 3rem;">
+        <div class="team-card">
+          <h4>Romaric Lonfonyuy</h4>
+          <p class="team-role">Lead Engineer</p>
+          <p class="team-bio">Backend &amp; OpenMRS expertise</p>
+        </div>
+        <div class="team-card">
+          <h4>Stephen Azongo</h4>
+          <p class="team-role">Lead Engineer</p>
+          <p class="team-bio">Backend &amp; FHIR integration</p>
+        </div>
       </div>
 
-      <div class="section-header mt-lg"><h3>Strategic Advisors</h3><p>80+ years cumulative experience</p></div>
-      <div class="team-grid">
-        <div class="team-card"><div class="team-photo"><img src="Images/Nana Kofi.png" alt="Nana Kofi Quakyi"></div><h4>Nana Kofi Quakyi</h4><p class="team-role">Public Health</p><p class="team-bio">Aurum Institute. 10+ years Ghana health system.</p></div>
-        <div class="team-card"><div class="team-photo"><img src="Images/Yaw.png" alt="Dr. Yaw Asare-Aboagye"></div><h4>Dr. Yaw Asare-Aboagye</h4><p class="team-role">Clinical Operations</p><p class="team-bio">Mayo Clinic. 40+ years clinical experience.</p></div>
-        <div class="team-card"><div class="team-photo"><img src="Images/Ahmed-abubakar.png" alt="Ahmed Abubakar"></div><h4>Ahmed Abubakar</h4><p class="team-role">Medical Doctor</p><p class="team-bio">Certified Gynecologist. 10+ years clinical.</p></div>
-        <div class="team-card"><div class="team-photo"><img src="Images/Benjamin.png" alt="Benjamin Kyeremeh Oppong"></div><h4>Benjamin Kyeremeh Oppong</h4><p class="team-role">Health IT Systems</p><p class="team-bio">10+ years managing Ghana's largest health IT.</p></div>
-        <div class="team-card"><div class="team-photo"><img src="Images/Samuel.png" alt="Samuel Darko"></div><h4>Samuel Darko</h4><p class="team-role">Business &amp; Growth</p><p class="team-bio">Serial entrepreneur. Ashesi faculty. 20 years.</p></div>
-        <div class="team-card"><div class="team-photo"><img src="Images/Naeem.png" alt="Naeem Zafar"></div><h4>Naeem Zafar</h4><p class="team-role">Strategy &amp; Investor</p><p class="team-bio">UC Berkeley lecturer. Angel investor.</p></div>
+      <!-- Advisors -->
+      <div class="section-header mt-lg reveal">
+        <h3>Strategic Advisors</h3>
+        <p>80+ years cumulative experience</p>
+      </div>
+      <div class="team-grid stagger">
+        <div class="team-card">
+          <div class="team-photo"><img src="Images/Nana Kofi.png" alt="Nana Kofi Quakyi"></div>
+          <h4>Nana Kofi Quakyi</h4>
+          <p class="team-role">Public Health</p>
+          <p class="team-bio">Aurum Institute. 10+ years Ghana health system.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-photo"><img src="Images/Yaw.png" alt="Dr. Yaw Asare-Aboagye"></div>
+          <h4>Dr. Yaw Asare-Aboagye</h4>
+          <p class="team-role">Clinical Operations</p>
+          <p class="team-bio">Mayo Clinic. 40+ years clinical experience.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-photo"><img src="Images/Ahmed-abubakar.png" alt="Ahmed Abubakar"></div>
+          <h4>Ahmed Abubakar</h4>
+          <p class="team-role">Medical Doctor</p>
+          <p class="team-bio">Certified Gynecologist. 10+ years clinical.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-photo"><img src="Images/Benjamin.png" alt="Benjamin Kyeremeh Oppong"></div>
+          <h4>Benjamin Kyeremeh Oppong</h4>
+          <p class="team-role">Health IT Systems</p>
+          <p class="team-bio">10+ years managing Ghana's largest health IT.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-photo"><img src="Images/Samuel.png" alt="Samuel Darko"></div>
+          <h4>Samuel Darko</h4>
+          <p class="team-role">Business &amp; Growth</p>
+          <p class="team-bio">Serial entrepreneur. Ashesi faculty. 20 years.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-photo"><img src="Images/Naeem.png" alt="Naeem Zafar"></div>
+          <h4>Naeem Zafar</h4>
+          <p class="team-role">Strategy &amp; Investor</p>
+          <p class="team-bio">UC Berkeley lecturer. Angel investor.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header"><h2>Recognition</h2></div>
-      <div class="benefit-grid">
-        <div class="benefit-card"><h3>UC Berkeley Big Ideas</h3><p>Top 5 of 200+ entries. Recognition for innovative approach to health infrastructure.</p></div>
-        <div class="benefit-card"><h3>2 Incubators</h3><p>MasterCard Foundation + University of Toronto. Network and support access.</p></div>
-        <div class="benefit-card"><h3>$20K Raised</h3><p>Pre-seed funding. Working prototype with validated routing and compression.</p></div>
-        <div class="benefit-card"><h3>10+ MoH Conversations</h3><p>Rwanda, Ghana, Uganda, Kenya, Cameroon. Pipeline building across 5 countries.</p></div>
-      </div>
-    </div>
-  </section>
-
+  <!-- ═══════════════════ RECOGNITION ═══════════════════ -->
   <section class="section">
     <div class="container">
-      <div class="section-header"><h2>Where We're Going</h2></div>
-      <div class="timeline">
-        <div class="timeline-item"><div class="timeline-marker">M6</div><div class="timeline-content"><h4>First Paid Pilot</h4><p>Research organization or private hospital chain. Prove the technology works in production.</p></div></div>
-        <div class="timeline-item"><div class="timeline-marker">M10</div><div class="timeline-content"><h4>GHS Letter of Intent</h4><p>Ghana Health Service engagement. Government validation for larger deployments.</p></div></div>
-        <div class="timeline-item"><div class="timeline-marker">M12</div><div class="timeline-content"><h4>2–3 EMR Vendor Partnerships</h4><p>Bundle deals with local implementing partners. Scale through their sales channels.</p></div></div>
-        <div class="timeline-item"><div class="timeline-marker">M18</div><div class="timeline-content"><h4>Series A Ready</h4><p>Proven revenue, multiple pilots, vendor partnerships. Ready to scale regionally.</p></div></div>
+      <div class="section-header reveal">
+        <div class="glow-line"></div>
+        <h2>Recognition</h2>
+      </div>
+      <div class="stats-grid stagger">
+        <div class="stat-card">
+          <div class="stat-value" style="font-size:2rem;">&#x1F3C6;</div>
+          <h4 style="margin:0.5rem 0 0.25rem">UC Berkeley Big Ideas</h4>
+          <p class="stat-text">Top 5 of 200+ entries. Recognition for innovative approach to health infrastructure.</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="font-size:2rem;">&#x1F680;</div>
+          <h4 style="margin:0.5rem 0 0.25rem">2 Incubators</h4>
+          <p class="stat-text">MasterCard Foundation + University of Toronto. Network and support access.</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" data-count="20" data-prefix="$" data-suffix="K">$0K</div>
+          <h4 style="margin:0.5rem 0 0.25rem">Pre-Seed Raised</h4>
+          <p class="stat-text">Working prototype with validated routing and compression.</p>
+        </div>
+      </div>
+
+      <div style="max-width:420px;margin:2rem auto 0;text-align:center;" class="reveal">
+        <div class="stat-card" style="border-color:var(--border-glow);">
+          <div class="stat-value" data-count="10" data-suffix="+">0+</div>
+          <h4 style="margin:0.25rem 0">MoH Conversations</h4>
+          <p class="stat-text">Rwanda, Ghana, Uganda, Kenya, Cameroon. Pipeline building across 5 countries.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section cta-section" id="book">
+  <!-- ═══════════════════ ROADMAP ═══════════════════ -->
+  <section class="section section-dark">
     <div class="container">
-      <div class="cta-content">
+      <div class="section-header reveal">
+        <div class="glow-line"></div>
+        <h2>Where We're Going</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-marker">M6</div>
+          <div class="timeline-content">
+            <h4>First Paid Pilot</h4>
+            <p>Research organization or private hospital chain. Prove the technology works in production.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">M10</div>
+          <div class="timeline-content">
+            <h4>GHS Letter of Intent</h4>
+            <p>Ghana Health Service engagement. Government validation for larger deployments.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">M12</div>
+          <div class="timeline-content">
+            <h4>2–3 EMR Vendor Partnerships</h4>
+            <p>Bundle deals with local implementing partners. Scale through their sales channels.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">M18</div>
+          <div class="timeline-content">
+            <h4>Series A Ready</h4>
+            <p>Proven revenue, multiple pilots, vendor partnerships. Ready to scale regionally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CTA ═══════════════════ -->
+  <section class="cta-section" id="book">
+    <div class="cta-orb"></div>
+    <div class="container">
+      <div class="cta-content reveal-scale">
         <h2>Join the journey</h2>
         <p>Whether you want to partner, invest, or just learn more — we'd love to hear from you.</p>
         <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly(); return false;">Book a Call</a>
-        <p class="cta-note">Or email <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a></p>
+        <p class="cta-note">Or email <a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a></p>
       </div>
     </div>
   </section>
 
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
-        <div class="footer-brand"><img src="Images/Logo.png" alt="nBogne" class="footer-logo"><p>Cellular-first data transmission layer.<br>Health is the first vertical.</p></div>
+        <div class="footer-brand">
+          <img src="Images/Logo.png" alt="nBogne" class="footer-logo">
+          <p>Cellular-first data transmission layer.<br>Health is the first vertical.</p>
+        </div>
         <div class="footer-links">
           <div class="footer-col"><h4>Product</h4><a href="solution.html">How It Works</a><a href="solution.html#security">Security</a><a href="solution.html#integration">Integration</a></div>
           <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="about.html#team">Team</a><a href="contact.html">Contact</a></div>
-          <div class="footer-col"><h4>Connect</h4><a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a><a href="tel:+233549253610">+233 549 253 610</a><a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a></div>
+          <div class="footer-col"><h4>Connect</h4><a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a><a href="tel:+233549253610">+233 549 253 610</a><a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a></div>
         </div>
       </div>
       <div class="footer-bottom"><p>&copy; 2026 nBogne. All rights reserved.</p><p>Accra, Ghana</p></div>
@@ -184,11 +309,6 @@
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <script>
-    function openCalendly(){if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/tchiosekale6/30min'});}else{window.open('https://calendly.com/tchiosekale6/30min','_blank');}return false;}
-    function toggleDarkMode(){const h=document.documentElement;const t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);localStorage.setItem('theme',t);}
-    (function(){const s=localStorage.getItem('theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s)document.documentElement.setAttribute('data-theme',s);else if(p)document.documentElement.setAttribute('data-theme','dark');})();
-  </script>
   <script src="js/main.js"></script>
 </body>
 </html>

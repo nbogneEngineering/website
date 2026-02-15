@@ -34,7 +34,7 @@ Place in `Images/` folder:
 Configured: `https://calendly.com/tchiosekale6/30min`
 
 ### 4. Email
-- **Displayed**: `tsteve@nbogne.com`
+- **Displayed**: `tchiosekale6@gmail.com`
 - **Form submissions**: Go to `tchiosekale6@gmail.com` via Formspree
 
 ## File Structure
