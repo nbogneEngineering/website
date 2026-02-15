@@ -1,23 +1,21 @@
 /**
- * nBogne Website - JavaScript
- * Minimal, functional interactions only
+ * nBogne Website — 2026
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-  
-  // Mobile Navigation Toggle
+
+  // Mobile Navigation
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMobile = document.querySelector('.nav-mobile');
-  
+
   if (mobileToggle && navMobile) {
     mobileToggle.addEventListener('click', function() {
       this.classList.toggle('active');
       navMobile.classList.toggle('active');
       document.body.style.overflow = navMobile.classList.contains('active') ? 'hidden' : '';
     });
-    
-    // Close on link click
-    navMobile.querySelectorAll('.nav-link').forEach(link => {
+
+    navMobile.querySelectorAll('.nav-link').forEach(function(link) {
       link.addEventListener('click', function() {
         mobileToggle.classList.remove('active');
         navMobile.classList.remove('active');
@@ -25,75 +23,66 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-  
-  // Header scroll effect
-  const header = document.querySelector('.header');
-  
+
+  // Header scroll shadow
+  var header = document.querySelector('.header');
   if (header) {
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
-      } else {
-        header.style.boxShadow = 'none';
-      }
+      header.style.boxShadow = window.scrollY > 40
+        ? '0 1px 4px rgba(0,0,0,0.06)'
+        : 'none';
     });
   }
-  
+
   // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      
+      var href = this.getAttribute('href');
       if (href !== '#' && href !== '#book') {
         e.preventDefault();
-        const target = document.querySelector(href);
-        
+        var target = document.querySelector(href);
         if (target) {
-          const headerHeight = header?.offsetHeight || 72;
-          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-          
+          var offset = (header ? header.offsetHeight : 68) + 16;
           window.scrollTo({
-            top: targetPosition,
+            top: target.getBoundingClientRect().top + window.scrollY - offset,
             behavior: 'smooth'
           });
         }
       }
     });
   });
-  
+
 });
 
-// Contact Form Handler - sends to tchiosekale6@gmail.com
+// Contact Form Handler — sends to tchiosekale6@gmail.com via Formspree
 function handleFormSubmit(event) {
   event.preventDefault();
-  
-  const form = event.target;
-  const submitBtn = form.querySelector('.form-submit');
-  const statusMsg = document.getElementById('form-status');
-  const originalText = submitBtn.textContent;
-  
+
+  var form = event.target;
+  var submitBtn = form.querySelector('.form-submit');
+  var statusMsg = document.getElementById('form-status');
+  var originalText = submitBtn.textContent;
+
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending...';
   statusMsg.style.display = 'block';
   statusMsg.textContent = 'Sending your message...';
-  statusMsg.style.color = 'var(--color-text-muted)';
-  
-  const formData = new FormData(form);
-  
-  // Use Formspree - update form ID at formspree.io to forward to tchiosekale6@gmail.com
+  statusMsg.style.color = 'var(--text-muted)';
+
+  var formData = new FormData(form);
+
   fetch('https://formspree.io/f/xnnegzqy', {
     method: 'POST',
     body: formData,
     headers: { 'Accept': 'application/json' }
   })
-  .then(response => {
+  .then(function(response) {
     if (response.ok) {
       statusMsg.textContent = 'Message sent! We\'ll respond within 24 hours.';
-      statusMsg.style.color = 'var(--color-secondary)';
+      statusMsg.style.color = 'var(--teal)';
       form.reset();
       submitBtn.textContent = 'Message Sent';
-      
-      setTimeout(() => {
+      setTimeout(function() {
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
         statusMsg.style.display = 'none';
@@ -102,8 +91,8 @@ function handleFormSubmit(event) {
       throw new Error('Failed');
     }
   })
-  .catch(error => {
-    statusMsg.textContent = 'Error sending message. Please email tsteve@nbogne.com directly.';
+  .catch(function() {
+    statusMsg.textContent = 'Error sending. Please email tsteve@nbogne.com directly.';
     statusMsg.style.color = '#ef4444';
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;

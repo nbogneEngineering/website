@@ -3,57 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How nBogne works - plug-and-play transport layer for health data over cellular.">
+  <meta name="description" content="How nBogne works — cellular-first transport layer for health data. Plug-and-play, vendor-agnostic.">
   <title>How It Works — nBogne</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" href="Images/Logo.png">
 </head>
 <body>
-  
-  <!-- Header -->
+
   <header class="header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="Images/Logo.png" alt="nBogne" class="logo-img">
-      </a>
-      
+      <a href="index.html" class="logo"><img src="Images/Logo.png" alt="nBogne" class="logo-img"></a>
       <nav class="nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="solution.html" class="nav-link active">Solution</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-      
-      <button class="dark-mode-toggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()">
-        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/>
-          <line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/>
-          <line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-      </button>
-      
-      <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly(); return false;">Book a Demo</a>
-      
-      <button class="mobile-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <button class="dark-toggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly(); return false;">Book a Demo</a>
+        <button class="mobile-toggle" aria-label="Menu"><span></span><span></span></button>
+      </div>
     </div>
-    
     <nav class="nav-mobile">
       <a href="index.html" class="nav-link">Home</a>
       <a href="solution.html" class="nav-link active">Solution</a>
@@ -63,370 +37,158 @@
     </nav>
   </header>
 
-  <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
       <h1>How nBogne Works</h1>
-      <p>
-        Plug-and-play transport layer for health data over cellular. 
-        Works with ANY EHR. Zero changes to existing workflows.
-      </p>
+      <p>Cellular-first transport layer for health data. Works with any EHR. Zero changes to existing workflows.</p>
     </div>
   </section>
 
-  <!-- The Insight -->
   <section class="section" id="how-it-works">
     <div class="container">
       <div class="two-col">
         <div class="col-text">
           <p class="section-label">The Insight</p>
           <h2>Data Layer, Not Application Layer</h2>
-          <p>
-            Most interoperability solutions work at the application layer — they require 
-            internet to function. When internet fails, they fail.
-          </p>
-          <p>
-            nBogne works at the transport layer. We don't touch your protocols, your data 
-            formats, or your workflows. We just move the packets — over whatever path is available.
-          </p>
-          <p class="highlight-text">
-            Internet → GPRS → SMS. Automatic fallback. Seamless switching.
-          </p>
+          <p>Most interoperability solutions work at the application layer — they require internet to function. When internet fails, they fail.</p>
+          <p>nBogne works at the transport layer. We don't touch your protocols, your data formats, or your workflows. We just move the packets — over whatever path is available.</p>
+          <p class="highlight">Internet → GPRS → SMS. Automatic fallback. Seamless switching.</p>
         </div>
-        
         <div class="col-visual">
-          <div class="flow-diagram">
-            <div class="flow-step">
-              <div class="flow-number">1</div>
-              <div class="flow-content">
-                <strong>Your EHR sends data</strong>
-                <span>Any format: FHIR, HL7, JSON, XML</span>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-number">2</div>
-              <div class="flow-content">
-                <strong>nBogne compresses</strong>
-                <span>80-97% smaller for low bandwidth</span>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-number">3</div>
-              <div class="flow-content">
-                <strong>Auto-select channel</strong>
-                <span>Best available: internet, GPRS, or SMS</span>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-number">4</div>
-              <div class="flow-content">
-                <strong>Deliver & confirm</strong>
-                <span>Retry until confirmed delivery</span>
-              </div>
-            </div>
+          <div class="flow-list">
+            <div class="flow-step"><div class="flow-num">1</div><div class="flow-body"><strong>Your EHR sends data</strong><span>Any format: FHIR, HL7, JSON, XML</span></div></div>
+            <div class="flow-step"><div class="flow-num">2</div><div class="flow-body"><strong>nBogne compresses</strong><span>80–97% smaller for low bandwidth</span></div></div>
+            <div class="flow-step"><div class="flow-num">3</div><div class="flow-body"><strong>Auto-select channel</strong><span>Best available: internet, GPRS, or SMS</span></div></div>
+            <div class="flow-step"><div class="flow-num">4</div><div class="flow-body"><strong>Deliver &amp; confirm</strong><span>Retry until confirmed delivery</span></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Core Capabilities -->
   <section class="section section-alt" id="features">
     <div class="container">
-      <div class="section-header">
-        <h2>Core Capabilities</h2>
-      </div>
-      
-      <div class="benefits-grid">
+      <div class="section-header"><h2>Core Capabilities</h2></div>
+      <div class="benefit-grid">
         <div class="benefit-card">
           <h3>Vendor-Agnostic</h3>
           <p>Works with existing systems without modification.</p>
-          <ul class="feature-list mt-lg">
-            <li>OpenMRS, OpenEMR</li>
-            <li>DHIS2, OpenHIM</li>
-            <li>FHIR R4 compatible</li>
-            <li>HL7v2 (2.3, 2.5, 2.7)</li>
-            <li>JSON / REST APIs</li>
-          </ul>
+          <ul class="feature-list mt-lg"><li>OpenMRS, OpenEMR</li><li>DHIS2, OpenHIM</li><li>FHIR R4 compatible</li><li>HL7v2 (2.3, 2.5, 2.7)</li><li>JSON / REST APIs</li></ul>
         </div>
-        
         <div class="benefit-card">
           <h3>Automatic Fallback</h3>
           <p>Seamless switching between channels.</p>
-          <ul class="feature-list mt-lg">
-            <li>Internet (when available)</li>
-            <li>GPRS/2G (primary fallback)</li>
-            <li>SMS (ultimate fallback)</li>
-            <li>No manual intervention</li>
-          </ul>
+          <ul class="feature-list mt-lg"><li>Internet (when available)</li><li>GPRS/2G (primary fallback)</li><li>SMS (ultimate fallback)</li><li>No manual intervention</li></ul>
         </div>
-        
         <div class="benefit-card">
           <h3>Intelligent Compression</h3>
           <p>Optimized for low-bandwidth environments.</p>
-          <ul class="feature-list mt-lg">
-            <li>80-97% payload reduction</li>
-            <li>5-15 KB typical packet size</li>
-            <li>Works on 20-50 kbps</li>
-            <li>Z-Standard algorithm</li>
-          </ul>
+          <ul class="feature-list mt-lg"><li>80–97% payload reduction</li><li>5–15 KB typical packet size</li><li>Works on 20–50 kbps</li><li>Z-Standard algorithm</li></ul>
         </div>
-        
         <div class="benefit-card">
           <h3>Guaranteed Delivery</h3>
           <p>Messages persist until successfully delivered.</p>
-          <ul class="feature-list mt-lg">
-            <li>Local queue (survives power loss)</li>
-            <li>Exponential backoff retry</li>
-            <li>Delivery confirmation</li>
-            <li>Dead letter inspection</li>
-          </ul>
+          <ul class="feature-list mt-lg"><li>Local queue (survives power loss)</li><li>Exponential backoff retry</li><li>Delivery confirmation</li><li>Dead letter inspection</li></ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Technical Scope -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>Technical Scope</h2>
-        <p>What we handle today — and what's coming.</p>
-      </div>
-      
+      <div class="section-header"><h2>Technical Scope</h2><p>What we handle today — and what's coming.</p></div>
       <div class="two-col">
         <div class="benefit-card">
           <h3>Today: Medical Records</h3>
-          <p>Text-based health records averaging 5-15 KB after compression. This covers 90%+ of routine health data transmission needs.</p>
-          <ul class="feature-list mt-lg">
-            <li>Patient demographics</li>
-            <li>Lab results (text)</li>
-            <li>Prescriptions</li>
-            <li>Visit summaries</li>
-            <li>Surveillance data</li>
-          </ul>
+          <p>Text-based health records averaging 5–15 KB after compression. This covers 90%+ of routine health data needs.</p>
+          <ul class="feature-list mt-lg"><li>Patient demographics</li><li>Lab results (text)</li><li>Prescriptions</li><li>Visit summaries</li><li>Surveillance data</li></ul>
         </div>
-        
         <div class="benefit-card">
           <h3>Future: Medical Imaging</h3>
-          <p>Medical images require different infrastructure. We're exploring mesh networks and LEO satellite options for this use case.</p>
-          <ul class="feature-list mt-lg">
-            <li>X-rays, CT scans</li>
-            <li>Ultrasound images</li>
-            <li>Mesh network transmission</li>
-            <li>Low Earth Orbit options</li>
-            <li>Coming 2027+</li>
-          </ul>
+          <p>Medical images require different infrastructure. We're exploring mesh networks and LEO satellite options.</p>
+          <ul class="feature-list mt-lg"><li>X-rays, CT scans</li><li>Ultrasound images</li><li>Mesh network transmission</li><li>Low Earth Orbit options</li><li>Coming 2027+</li></ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Security Section -->
   <section class="section section-dark" id="security">
     <div class="container">
-      <div class="section-header">
-        <h2>Security by Design</h2>
-        <p>Stateless architecture means we can't lose what we don't store.</p>
-      </div>
-      
+      <div class="section-header"><h2>Security by Design</h2><p>Stateless architecture means we can't lose what we don't store.</p></div>
       <div class="security-grid">
-        <div class="security-card">
-          <h4>No Data at Rest</h4>
-          <p>Clinical data passes through RAM only. Never touches disk. 60-second maximum processing window.</p>
-        </div>
-        
-        <div class="security-card">
-          <h4>End-to-End Encryption</h4>
-          <p>Data encrypted from source to destination. We route but cannot read.</p>
-        </div>
-        
-        <div class="security-card">
-          <h4>Metadata-Only Audit</h4>
-          <p>Transaction logs contain: timestamp, source, destination, size, hash. Never clinical content.</p>
-        </div>
-        
-        <div class="security-card">
-          <h4>Compliance Ready</h4>
-          <p>Ghana DPA, HIPAA, GDPR compatible. Architecture handles compliance by default.</p>
-        </div>
+        <div class="security-card"><h4>No Data at Rest</h4><p>Clinical data passes through RAM only. Never touches disk. 60-second maximum processing window.</p></div>
+        <div class="security-card"><h4>End-to-End Encryption</h4><p>Data encrypted from source to destination. We route but cannot read.</p></div>
+        <div class="security-card"><h4>Metadata-Only Audit</h4><p>Logs contain: timestamp, source, destination, size, hash. Never clinical content.</p></div>
+        <div class="security-card"><h4>Compliance Ready</h4><p>Ghana DPA, HIPAA, GDPR compatible. Architecture handles compliance by default.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Integration -->
   <section class="section" id="integration">
     <div class="container">
       <div class="two-col">
         <div class="col-text">
           <p class="section-label">Integration</p>
           <h2>Days to weeks, not months</h2>
-          <p>
-            nBogne is designed for rapid deployment. For EMRs with standard APIs, 
-            integration typically takes days. For complex legacy systems, we work 
-            with your team on custom adapters.
-          </p>
-          <p>
-            Either way, faster than building offline capability in-house. And we 
-            handle the maintenance, updates, and carrier relationships.
-          </p>
-          
+          <p>nBogne is designed for rapid deployment. For EMRs with standard APIs, integration typically takes days. For complex legacy systems, we work with your team on custom adapters.</p>
+          <p>Either way, faster than building offline capability in-house. And we handle the maintenance, updates, and carrier relationships.</p>
           <a href="contact.html" class="link-arrow mt-lg">Discuss your integration</a>
         </div>
-        
         <div class="col-visual">
           <div class="benefit-card">
             <h3>Integration Options</h3>
-            <ul class="feature-list mt-lg">
-              <li>REST API (recommended)</li>
-              <li>FHIR R4 native</li>
-              <li>HL7v2 adapter</li>
-              <li>Custom webhook</li>
-              <li>SDK (Python, Node.js)</li>
-            </ul>
-            <p class="mt-lg" style="font-size: 0.875rem; color: var(--color-text-muted);">
-              Don't see your stack? Contact us — we're flexible.
-            </p>
+            <ul class="feature-list mt-lg"><li>REST API (recommended)</li><li>FHIR R4 native</li><li>HL7v2 adapter</li><li>Custom webhook</li><li>SDK (Python, Node.js)</li></ul>
+            <p class="mt-lg" style="font-size: 0.8125rem; color: var(--text-muted);">Don't see your stack? Contact us — we're flexible.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Partnership Model -->
   <section class="section section-alt">
     <div class="container">
-      <div class="section-header">
-        <h2>Partnership Model</h2>
-        <p>We're not competing with EMR vendors. We're making you win.</p>
-      </div>
-      
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <h3>For EMR Vendors</h3>
-          <p>
-            Bundle nBogne with your solution. Add "works offline" to your feature list 
-            without building it. Win bids in connectivity-challenged markets where 
-            competitors can't operate.
-          </p>
-        </div>
-        
-        <div class="benefit-card">
-          <h3>For Hospital Networks</h3>
-          <p>
-            Stop paying $600+/facility/month for Starlink. nBogne works on existing 
-            cellular infrastructure. Connect your entire network with reliable 
-            real-time data flow.
-          </p>
-        </div>
-        
-        <div class="benefit-card">
-          <h3>For Research Organizations</h3>
-          <p>
-            Field trials in remote areas? Maintain 100% data flow to sponsors even 
-            without internet. No more batch uploads when you return to connectivity.
-          </p>
-        </div>
-        
-        <div class="benefit-card">
-          <h3>For Governments</h3>
-          <p>
-            National health information exchange without centralized storage risk. 
-            Real-time disease surveillance. Infrastructure that scales from pilot to 
-            nationwide deployment.
-          </p>
-        </div>
+      <div class="section-header"><h2>Partnership Model</h2><p>We're not competing with EMR vendors. We're making you win.</p></div>
+      <div class="benefit-grid">
+        <div class="benefit-card"><h3>For EMR Vendors</h3><p>Bundle nBogne with your solution. Add "works offline" to your feature list without building it. Win bids in connectivity-challenged markets.</p></div>
+        <div class="benefit-card"><h3>For Hospital Networks</h3><p>Stop paying $640+/facility/year for Starlink. nBogne works on existing cellular infrastructure at $110–510/yr per facility.</p></div>
+        <div class="benefit-card"><h3>For Research Organizations</h3><p>Field trials in remote areas? Maintain 100% data flow to sponsors even without internet. No more batch uploads.</p></div>
+        <div class="benefit-card"><h3>For Governments</h3><p>National health information exchange without centralized storage risk. Real-time disease surveillance. Scales from pilot to nationwide.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section cta-section" id="book">
     <div class="container">
       <div class="cta-content">
         <h2>See it in action</h2>
-        <p>
-          Let's discuss how nBogne can become your competitive advantage 
-          in connectivity-challenged markets.
-        </p>
-        <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly()">Schedule a Demo</a>
+        <p>Let's discuss how nBogne can become your competitive advantage in connectivity-challenged markets.</p>
+        <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly(); return false;">Schedule a Demo</a>
         <p class="cta-note">Or email <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
-        <div class="footer-brand">
-          <img src="Images/Logo.png" alt="nBogne" class="footer-logo">
-          <p>Offline-first transport layer for health data.<br>Health is the first vertical.</p>
-        </div>
-        
+        <div class="footer-brand"><img src="Images/Logo.png" alt="nBogne" class="footer-logo"><p>Cellular-first data transmission layer.<br>Health is the first vertical.</p></div>
         <div class="footer-links">
-          <div class="footer-col">
-            <h4>Product</h4>
-            <a href="solution.html">How It Works</a>
-            <a href="solution.html#security">Security</a>
-            <a href="solution.html#integration">Integration</a>
-          </div>
-          
-          <div class="footer-col">
-            <h4>Company</h4>
-            <a href="about.html">About Us</a>
-            <a href="about.html#team">Team</a>
-            <a href="contact.html">Contact</a>
-          </div>
-          
-          <div class="footer-col">
-            <h4>Connect</h4>
-            <a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a>
-            <a href="tel:+233549253610">+233 549 253 610</a>
-            <a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a>
-          </div>
+          <div class="footer-col"><h4>Product</h4><a href="solution.html">How It Works</a><a href="solution.html#security">Security</a><a href="solution.html#integration">Integration</a></div>
+          <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="about.html#team">Team</a><a href="contact.html">Contact</a></div>
+          <div class="footer-col"><h4>Connect</h4><a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a><a href="tel:+233549253610">+233 549 253 610</a><a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a></div>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2026 nBogne. All rights reserved.</p>
-        <p>Accra, Ghana</p>
-      </div>
+      <div class="footer-bottom"><p>&copy; 2026 nBogne. All rights reserved.</p><p>Accra, Ghana</p></div>
     </div>
   </footer>
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  
   <script>
-    function openCalendly() {
-      if (typeof Calendly !== 'undefined') {
-        Calendly.initPopupWidget({url: 'https://calendly.com/tchiosekale6/30min'});
-      } else {
-        window.open('https://calendly.com/tchiosekale6/30min', '_blank');
-      }
-      return false;
-    }
-    
-    function toggleDarkMode() {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    }
-    
-    (function() {
-      const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (prefersDark) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    })();
+    function openCalendly(){if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/tchiosekale6/30min'});}else{window.open('https://calendly.com/tchiosekale6/30min','_blank');}return false;}
+    function toggleDarkMode(){const h=document.documentElement;const t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);localStorage.setItem('theme',t);}
+    (function(){const s=localStorage.getItem('theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s)document.documentElement.setAttribute('data-theme',s);else if(p)document.documentElement.setAttribute('data-theme','dark');})();
   </script>
-  
   <script src="js/main.js"></script>
 </body>
 </html>

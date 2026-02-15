@@ -3,57 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="nBogne - Offline-first transport layer for health data. Partner with us to win bids in connectivity-challenged markets.">
+  <meta name="description" content="nBogne — Cellular-first data transmission layer for Africa's health systems. Keeps data flowing where internet can't.">
   <title>nBogne — Healthier Everywhere</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" href="Images/Logo.png">
 </head>
 <body>
-  
-  <!-- Header -->
+
   <header class="header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="Images/Logo.png" alt="nBogne" class="logo-img">
-      </a>
-      
+      <a href="index.html" class="logo"><img src="Images/Logo.png" alt="nBogne" class="logo-img"></a>
       <nav class="nav">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="solution.html" class="nav-link">Solution</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-      
-      <button class="dark-mode-toggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()">
-        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/>
-          <line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/>
-          <line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-      </button>
-      
-      <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly(); return false;">Book a Demo</a>
-      
-      <button class="mobile-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <button class="dark-toggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="#book" class="btn btn-primary header-cta" onclick="openCalendly(); return false;">Book a Demo</a>
+        <button class="mobile-toggle" aria-label="Menu"><span></span><span></span></button>
+      </div>
     </div>
-    
     <nav class="nav-mobile">
       <a href="index.html" class="nav-link active">Home</a>
       <a href="solution.html" class="nav-link">Solution</a>
@@ -63,300 +37,143 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="hero-label">Building in Ghana • Scaling Globally</p>
-        <h1>Win bids in connectivity-challenged markets.</h1>
-        <p class="hero-text">
-          When internet fails, health systems go blind. nBogne is the plug-and-play transport layer 
-          that keeps data flowing over cellular — so your system works where others can't.
-        </p>
+        <p class="hero-label">Building in Ghana · Scaling Globally</p>
+        <h1>Africa's health systems go blind when internet fails.</h1>
+        <p class="hero-text">94% of the continent has cellular coverage, but only 38% has broadband. nBogne is the cellular-first data transmission layer that plugs into any EHR and keeps data flowing where internet can't.</p>
         <div class="hero-actions">
-          <a href="#book" class="btn btn-primary btn-lg" onclick="openCalendly()">Partner With Us</a>
-          <a href="solution.html" class="btn btn-secondary btn-lg">See How It Works</a>
+          <a href="#book" class="btn btn-primary btn-lg" onclick="openCalendly(); return false;">Partner With Us</a>
+          <a href="solution.html" class="btn btn-outline btn-lg">How It Works</a>
         </div>
       </div>
-      
       <div class="hero-visual">
         <div class="hero-diagram">
-          <div class="diagram-node diagram-source">
-            <span class="diagram-label">Your System</span>
-          </div>
+          <div class="diagram-node diagram-source"><span class="diagram-label">Your EHR</span></div>
           <div class="diagram-line">
-            <svg viewBox="0 0 120 20" class="diagram-arrow">
-              <line x1="0" y1="10" x2="100" y2="10" stroke="currentColor" stroke-width="2"/>
-              <polygon points="100,10 90,5 90,15" fill="currentColor"/>
-            </svg>
+            <svg viewBox="0 0 120 20" class="diagram-arrow"><line x1="0" y1="10" x2="100" y2="10" stroke="currentColor" stroke-width="2"/><polygon points="100,10 90,5 90,15" fill="currentColor"/></svg>
             <span class="diagram-sublabel">2G / GPRS / SMS</span>
           </div>
-          <div class="diagram-node diagram-dest">
-            <span class="diagram-label">Central Server</span>
-          </div>
+          <div class="diagram-node diagram-dest"><span class="diagram-label">Central Server</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Problem -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>When Internet Fails, Systems Go Blind</h2>
+        <h2>The Infrastructure Gap</h2>
+        <p>Standards exist. Middleware exists. EMRs exist. What's missing is a transport layer that works when internet doesn't.</p>
       </div>
-      
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-stat">38%</div>
-          <p class="problem-text">Broadband access in Africa (2025). Yet 94% have cellular coverage.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">38%</div>
+          <p class="stat-text">Broadband access in Africa (ITU 2025). Yet 94% have cellular coverage ready to carry data.</p>
         </div>
-        
-        <div class="problem-card">
-          <div class="problem-stat">$600+</div>
-          <p class="problem-text">Per facility per month for Starlink — or lose data entirely when internet fails.</p>
+        <div class="stat-card">
+          <div class="stat-value">~100K</div>
+          <p class="stat-text">Health facilities in sub-Saharan Africa lack reliable internet connectivity (WHO estimate).</p>
         </div>
-        
-        <div class="problem-card">
-          <div class="problem-stat">70+</div>
-          <p class="problem-text">Countries on DHIS2 & OpenHIM. Infrastructure exists. Transport is the gap.</p>
+        <div class="stat-card">
+          <div class="stat-value">70+</div>
+          <p class="stat-text">Countries run DHIS2 and OpenHIM. The software exists — transmission is the gap.</p>
         </div>
-      </div>
-      
-      <div class="problem-context">
-        <p>
-          Standards exist. Middleware exists. EMRs exist. What's missing is a transport layer 
-          that works when internet doesn't. That's what we built.
-        </p>
       </div>
     </div>
   </section>
 
-  <!-- Solution Overview -->
   <section class="section section-alt">
     <div class="container">
       <div class="two-col">
         <div class="col-text">
-          <p class="section-label">For EMR Vendors & Networks</p>
-          <h2>Your System + nBogne = Distinctive Competitive Advantage (DAC)</h2>
-          <p>
-            Vendors lose bids in low infrastructure markets, pay thousands/month per facility 
-            for LEOs — or accept data loss. Ministries go blind for days when internet fails.
-          </p>
-          <p>
-            nBogne is the plug-and-play data layer that solves this. We work with ANY EHR system. 
-            Zero changes to existing workflows. Automatic fallback from internet to GPRS to SMS.
-          </p>
-          <p class="highlight-text">
-            Partner with us. They sell. You win.
-          </p>
-          <a href="solution.html" class="link-arrow">Learn how it works</a>
+          <p class="section-label">For EMR Vendors &amp; Networks</p>
+          <h2>Your EHR + nBogne = Competitive Advantage</h2>
+          <p>Vendors lose bids in low-connectivity markets. Hospital networks pay $640+/year per facility for Starlink — or accept data loss. Ministries go blind for days during outages.</p>
+          <p>nBogne is the plug-and-play transmission layer that solves this. We work with any EHR system. Zero changes to existing workflows. Automatic fallback from internet to GPRS to SMS.</p>
+          <p class="highlight">Partner with us. They sell. You win.</p>
+          <a href="solution.html" class="link-arrow mt-lg">Learn how it works</a>
         </div>
-        
         <div class="col-visual">
-          <div class="flow-diagram">
-            <div class="flow-step">
-              <div class="flow-number">1</div>
-              <div class="flow-content">
-                <strong>Vendor-Agnostic</strong>
-                <span>OpenMRS, DHIS2, OpenHIM, FHIR-compatible</span>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-number">2</div>
-              <div class="flow-content">
-                <strong>Automatic Fallback</strong>
-                <span>Internet → GPRS → SMS seamlessly</span>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-number">3</div>
-              <div class="flow-content">
-                <strong>$0 Hardware</strong>
-                <span>Uses existing phones and systems</span>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-number">4</div>
-              <div class="flow-content">
-                <strong>80-97% Compression</strong>
-                <span>5-15 KB packets work on 2G</span>
-              </div>
-            </div>
+          <div class="flow-list">
+            <div class="flow-step"><div class="flow-num">1</div><div class="flow-body"><strong>Vendor-Agnostic</strong><span>OpenMRS, DHIS2, OpenHIM, FHIR, HL7v2</span></div></div>
+            <div class="flow-step"><div class="flow-num">2</div><div class="flow-body"><strong>Automatic Fallback</strong><span>Internet → GPRS → SMS seamlessly</span></div></div>
+            <div class="flow-step"><div class="flow-num">3</div><div class="flow-body"><strong>$0 Hardware</strong><span>Uses existing phones and systems</span></div></div>
+            <div class="flow-step"><div class="flow-num">4</div><div class="flow-body"><strong>80–97% Compression</strong><span>5–15 KB packets work on 2G</span></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Who We Serve -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>Who We Serve</h2>
-      </div>
-      
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <h3>EMR Vendors</h3>
-          <p>
-            Add "works offline" to your feature list without building it. Bundle nBogne and 
-            win bids in markets where competitors can't operate.
-          </p>
-        </div>
-        
-        <div class="benefit-card">
-          <h3>Hospital Networks</h3>
-          <p>
-            Stop paying racking LEO expense. Connect 5 facilities or 500 with 
-            real-time data flow — even with minimal deployment costs.
-          </p>
-        </div>
-        
-        <div class="benefit-card">
-          <h3>Research Organizations</h3>
-          <p>
-            Field trials in remote areas? 100% data flow to sponsors. No more batch uploads 
-            when you return to connectivity.
-          </p>
-        </div>
-        
-        <div class="benefit-card">
-          <h3>Ministries of Health</h3>
-          <p>
-            Disease surveillance in hours, not days. Real-time visibility without centralized 
-            storage. Infrastructure that scales nationally in hours instead of months.
-          </p>
-        </div>
+      <div class="section-header"><h2>Who We Serve</h2></div>
+      <div class="benefit-grid">
+        <div class="benefit-card"><h3>EMR Vendors</h3><p>Add "works offline" to your feature list without building it. Bundle nBogne and win bids in markets where competitors can't operate.</p></div>
+        <div class="benefit-card"><h3>Hospital Networks</h3><p>Stop paying $640+/yr per facility for LEO satellite. Connect facilities with real-time data flow over existing cellular infrastructure.</p></div>
+        <div class="benefit-card"><h3>Research Organizations</h3><p>Field trials in remote areas? 100% data flow to sponsors. No more batch uploads when you return to connectivity.</p></div>
+        <div class="benefit-card"><h3>Ministries of Health</h3><p>Disease surveillance in hours, not days. Only 20% of African countries report weekly surveillance on time (WHO). nBogne changes that.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Technical Credibility -->
   <section class="section section-dark">
     <div class="container">
-      <div class="stats-row">
-        <div class="stat-item">
-          <div class="stat-value">5-15 KB</div>
-          <div class="stat-label">Typical packet size</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">80-97%</div>
-          <div class="stat-label">Data compression</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">20-50 kbps</div>
-          <div class="stat-label">Minimum bandwidth</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">Records + Images</div>
-          <div class="stat-label">Images → Future (mesh)</div>
-        </div>
+      <div class="stats-bar">
+        <div><div class="stat-value">5–15 KB</div><div class="stat-label">Typical packet size</div></div>
+        <div><div class="stat-value">80–97%</div><div class="stat-label">Data compression</div></div>
+        <div><div class="stat-value">20–50 kbps</div><div class="stat-label">Minimum bandwidth</div></div>
+        <div><div class="stat-value">$110–510</div><div class="stat-label">Annual cost per facility</div></div>
       </div>
     </div>
   </section>
 
-  <!-- Platform Vision -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <h2>Health is the First Vertical</h2>
-        <p>
-          The same problem exists across law enforcement, voter registers, national ID, 
-          and e-governance. We're starting with health — then expanding.
-        </p>
+        <h2>Health Is the First Vertical</h2>
+        <p>The same infrastructure gap blinds law enforcement, voter registers, national ID, and e-governance. We're starting with health — then expanding across the Global South.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section cta-section" id="book">
     <div class="container">
       <div class="cta-content">
         <h2>Ready to win more bids?</h2>
-        <p>
-          Whether you're an EMR vendor, hospital network, or ministry of health — 
-          let's discuss how nBogne can become your competitive advantage.
-        </p>
-        <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly()">Book a 30-Minute Call</a>
-        <p class="cta-note">Or reach us directly at <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a></p>
+        <p>Whether you're an EMR vendor, hospital network, or ministry of health — let's discuss how nBogne becomes your competitive advantage.</p>
+        <a href="#" class="btn btn-primary btn-lg" onclick="openCalendly(); return false;">Book a 30-Minute Call</a>
+        <p class="cta-note">Or reach us at <a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
           <img src="Images/Logo.png" alt="nBogne" class="footer-logo">
-          <p>Offline-first transport layer for health data.<br>Health is the first vertical.</p>
+          <p>Cellular-first data transmission layer.<br>Health is the first vertical.</p>
         </div>
-        
         <div class="footer-links">
-          <div class="footer-col">
-            <h4>Product</h4>
-            <a href="solution.html">How It Works</a>
-            <a href="solution.html#security">Security</a>
-            <a href="solution.html#integration">Integration</a>
-          </div>
-          
-          <div class="footer-col">
-            <h4>Company</h4>
-            <a href="about.html">About Us</a>
-            <a href="about.html#team">Team</a>
-            <a href="contact.html">Contact</a>
-          </div>
-          
-          <div class="footer-col">
-            <h4>Connect</h4>
-            <a href="mailto:tchiosekale6@gmail.com">tchiosekale6@gmail.com</a>
-            <a href="tel:+233549253610">+233 549 253 610</a>
-            <a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a>
-          </div>
+          <div class="footer-col"><h4>Product</h4><a href="solution.html">How It Works</a><a href="solution.html#security">Security</a><a href="solution.html#integration">Integration</a></div>
+          <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="about.html#team">Team</a><a href="contact.html">Contact</a></div>
+          <div class="footer-col"><h4>Connect</h4><a href="mailto:tsteve@nbogne.com">tsteve@nbogne.com</a><a href="tel:+233549253610">+233 549 253 610</a><a href="https://linkedin.com/company/nbogne" target="_blank">LinkedIn</a></div>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2026 nBogne. All rights reserved.</p>
-        <p>Accra, Ghana</p>
-      </div>
+      <div class="footer-bottom"><p>&copy; 2026 nBogne. All rights reserved.</p><p>Accra, Ghana</p></div>
     </div>
   </footer>
 
-  <!-- Calendly Widget -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  
   <script>
-    function openCalendly() {
-      if (typeof Calendly !== 'undefined') {
-        Calendly.initPopupWidget({url: 'https://calendly.com/tchiosekale6/30min'});
-      } else {
-        window.open('https://calendly.com/tchiosekale6/30min', '_blank');
-      }
-      return false;
-    }
-    
-    function toggleDarkMode() {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    }
-    
-    (function() {
-      const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (prefersDark) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    })();
+    function openCalendly(){if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/tchiosekale6/30min'});}else{window.open('https://calendly.com/tchiosekale6/30min','_blank');}return false;}
+    function toggleDarkMode(){const h=document.documentElement;const t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);localStorage.setItem('theme',t);}
+    (function(){const s=localStorage.getItem('theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s)document.documentElement.setAttribute('data-theme',s);else if(p)document.documentElement.setAttribute('data-theme','dark');})();
   </script>
-  
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,37 +1,29 @@
-# nBogne Website (Updated)
+# nBogne Website — 2026 Redesign
 
-Updated website with new strategic positioning based on Samuel Darko conversation insights.
+Cellular-first data transmission layer for Africa's health systems.
 
-## Key Changes
+## Key Positioning
 
-### Messaging Updates
-- **Hero**: "Win bids in connectivity-challenged markets" (vendor-focused)
-- **Value Prop**: "Your EHR + nBogne = Competitive Advantage"
-- **Target Customers**: Research Orgs → Hospital Chains → EMR Vendors → Governments
-- **Platform Vision**: "Health is the first vertical" - expansion to law enforcement, voter registers, e-gov
-- **Technical Scope**: 5-15 KB records only, medical images → future (mesh/LEO)
-
-### Customer Focus Shift
-- From: End-user pain (patients, clinicians)
-- To: Client pain (vendors losing bids, $600/month Starlink, ministries going blind)
+- **Framing**: Infrastructure gap (not interoperability)
+- **Problem**: Systems go blind (not offline-first)
+- **Solution**: Cellular-first transmission layer (not stateless exchange)
+- **Target**: EMR Vendors → Hospital Networks → Research Orgs → Governments
 
 ## Setup
 
 ### 1. Formspree Contact Form
-The contact form uses Formspree. To route submissions to `tchiosekale6@gmail.com`:
+The contact form uses Formspree to route submissions to `tchiosekale6@gmail.com`:
 
 1. Go to [formspree.io](https://formspree.io)
 2. Sign up/login with `tchiosekale6@gmail.com`
 3. Create a new form
-4. Copy the form ID (e.g., `xnnegzqy`)
-5. Update `contact.html` line ~82: `action="https://formspree.io/f/YOUR_FORM_ID"`
-6. Update `js/main.js` line ~77: same URL
+4. Update `contact.html` and `js/main.js` with your form ID
 
-**Current placeholder**: `xnnegzqy` (update this)
+**Current placeholder**: `xnnegzqy`
 
 ### 2. Add Images
 Place in `Images/` folder:
-- `Logo.png` — Your nBogne logo
+- `Logo.png` — nBogne logo
 - `THierry.png` — Thierry Tchio Sekale photo
 - `Alma.png` — Alma photo
 - `Africa_CDC_partnership.webp` — Africa image
@@ -39,31 +31,37 @@ Place in `Images/` folder:
 - Credential logos: `Ashesi.png`, `UC-Berkeley.png`, `KPMG.png`
 
 ### 3. Calendly
-Already configured to use: `https://calendly.com/tchiosekale6/30min`
+Configured: `https://calendly.com/tchiosekale6/30min`
 
-### 4. Email Display
+### 4. Email
 - **Displayed**: `tsteve@nbogne.com`
-- **Form submissions**: Go to `tchiosekale6@gmail.com` (via Formspree)
+- **Form submissions**: Go to `tchiosekale6@gmail.com` via Formspree
 
 ## File Structure
 
 ```
-nbogne-website/
-├── index.html          # Home page (updated messaging)
-├── solution.html       # How it works (technical scope, partnership model)
-├── about.html          # Team & story (platform vision)
-├── contact.html        # Contact form (partnership focus)
+website/
+├── index.html          # Home — positioning, stats, who we serve
+├── solution.html       # Technical — how it works, capabilities, security
+├── about.html          # Team, story, platform vision, roadmap
+├── contact.html        # Contact form, FAQ
 ├── css/
-│   └── styles.css      # All styles (unchanged)
+│   └── styles.css      # Full stylesheet (DM Serif + DM Sans, dark mode)
 ├── js/
-│   └── main.js         # JavaScript (form handling)
+│   └── main.js         # Mobile nav, form handler, scroll effects
 └── Images/             # Add your images here
 ```
 
-## Deployment
+## Design
 
-Static site - deploy to:
+- **Typography**: DM Serif Display (headers), DM Sans (body)
+- **Colors**: Teal (#0d9488 / #14b8a6), Navy (#0b1120), warm neutrals
+- **Dark mode**: Full support via `data-theme="dark"` attribute
+- **Responsive**: Mobile-first, breakpoints at 600px, 768px, 900px
+
+## Deploy
+
+Static site — works with any host:
 - **Vercel**: `vercel`
 - **Netlify**: Drag and drop
 - **GitHub Pages**: Push to repo, enable Pages
-- **Any static host**: Upload files
